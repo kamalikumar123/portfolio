@@ -89,9 +89,9 @@ document.querySelectorAll('a').forEach(links =>{
 var btn = document.getElementById('btn');
 btn.addEventListener('click',function(e){
     e.preventDefault()
-    var name=document.getElementById('name').value;
-    var email=document.getElementById('email').value;
-    var message=document.getElementById('message').value;
+    var name=document.getElementById('Name').value;
+    var email=document.getElementById('Email').value;
+    var message=document.getElementById('Message').value;
     var body='Name: ' +name + '<br/> Email: ' +email + '<br/> Message' + message;
 
 
