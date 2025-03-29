@@ -12,6 +12,20 @@
 
     <!-- Custom CSS File Link -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Add your custom CSS here */
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px; /* Space between images */
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px; /* Optional: for rounded corners */
+        }
+    </style>
 </head>
 
 <body>
@@ -87,7 +101,7 @@
     <!-- Portfolio Section Starts -->
     <section class="portfolio" id="portfolio">
         <h1 class="heading"> Certificates </h1>
-        <div class="box-container">
+        <div class="image-container">
             <div class="box">
                 <img src="aws partner.jpeg" alt="">
             </div>
