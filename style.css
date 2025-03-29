@@ -1,51 +1,53 @@
-header {
-    position: fixed;
-    top: 0; left: 0; bottom: 0;
-    background: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 1000;
-    flex-flow: column;
-    padding: 8rem 2rem;
-    width: 30rem;
-    text-align: center;
-    transition: left 0.3s ease; /* Added transition for smooth effect */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+:root {
+    --main-color: #007BFF; /* Primary color */
+    --secondary-color: #28A745; /* Secondary color */
+    --accent-color: #FFC107; /* Accent color */
+    --background-color: #F8F9FA; /* Light background color */
+    --text-color: #343A40; /* Text color */
 }
 
-header.active {
-    left: 0; /* Show the menu */
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    line-height: 1.5;
 }
 
-#menu-bars {
-    position: fixed;
-    top: 1rem; right: 1rem;
-    z-index: 10000;
-    background: var(--main-color);
-    color: #fff;
-    border-radius: .5rem;
-    padding: 1rem 1.5rem;
-    font-size: 3rem;
-    cursor: pointer;
-    display: none;
-    transition: background 0.3s ease; /* Added transition for background */
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
-#menu-bars:hover {
-    background: darken(var(--main-color), 10%); /* Darken effect on hover */
+body {
+    background: var(--background-color);
+    color: var(--text-color);
 }
 
-/* Media Queries */
-@media (max-width: 991px) {
-    #menu-bars {
-        display: initial; /* Show menu button on small screens */
-    }
-    
-    header {
-        left: -120%; /* Hide menu off-screen */
-    }
-
-    header.active {
-        left: 0; /* Show the menu */
-    }
+section {
+    padding: 2rem 5%;
+    min-height: 100vh;
 }
+
+.heading {
+    font-size: 4rem;
+    padding-bottom: 1rem;
+    color: var(--main-color);
+    text-transform: uppercase;
+    position: relative;
+}
+
+.heading::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background: var(--secondary-color);
+    margin-top: 1rem;
+    transition
