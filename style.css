@@ -20,7 +20,7 @@
 }
 
 html {
-    font-size: 62.5%;
+    font-size: 62.5%; /* 1rem = 10px */
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
@@ -50,4 +50,48 @@ section {
     height: 4px;
     background: var(--secondary-color);
     margin-top: 1rem;
-    transition
+    transition: width 0.3s ease; /* Smooth transition for width */
+}
+
+/* Responsive Heading */
+@media (max-width: 768px) {
+    .heading {
+        font-size: 3rem; /* Smaller font size for mobile */
+    }
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--main-color);
+    color: #fff;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--secondary-color);
+}
+
+/* Image Container Styles */
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px; /* Space between images */
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Optional: for rounded corners */
+}
+
+/* Footer Styles */
+.footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: var(--main-color);
+    color: #fff;
+    margin-top: 2rem;
+}
