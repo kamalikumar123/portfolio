@@ -111,6 +111,10 @@ header .navbar a:hover{
     letter-spacing: .2rem;
     color:var(--main-color);
 }
+nav a.active {
+  color: var(--main-color);
+  font-weight: bold;
+}
 
 header .follow a{
     font-size: 2.5rem;
