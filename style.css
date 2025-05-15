@@ -555,6 +555,17 @@ header .follow a:hover{
 
 
 
+.decent-fade-in {
+  opacity: 0;
+  animation: fadeInAnimation 2s forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeInAnimation {
+  to {
+    opacity: 1;
+  }
+}
 
 /* media queries  */
 @media (max-width:991px){
