@@ -15,8 +15,8 @@
     <!-- custom css file link  -->
     <link rel="stylesheet" href="style.css">
     <!-- AOS CSS -->
-<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
 </head>
 
@@ -88,47 +88,48 @@
             <div class="content">
                 <h3>Kamali Kumar</h3>
                 
-         <p>      👩‍🏫 About Me – Kamali Kumar
-Experienced freelance trainer passionate about teaching programming across various colleges.
+        <section class="about" id="about" style="max-width: 600px; margin: auto;">
 
-Dedicated to creating a positive, hands-on learning environment tailored to each student’s needs.
+  <h3 data-aos="fade-up">👩‍🏫 About Me – Kamali Kumar</h3>
+  <ul style="list-style: disc; padding-left: 20px; line-height: 1.6;">
+    <li data-aos="fade-up" data-aos-delay="100">Experienced freelance trainer passionate about teaching programming across various colleges.</li>
+    <li data-aos="fade-up" data-aos-delay="200">Dedicated to creating a positive, hands-on learning environment tailored to each student’s needs.</li>
+    <li data-aos="fade-up" data-aos-delay="300">Believe every student has the potential to excel with the right guidance.</li>
+    <li data-aos="fade-up" data-aos-delay="400">Focus on real-world applications and custom training programs to meet evolving tech trends.</li>
+  </ul>
 
-Believe every student has the potential to excel with the right guidance.
+  <h3 data-aos="fade-up" data-aos-delay="500">💻 IT Experience & Internships</h3>
+  <ul style="list-style: disc; padding-left: 20px; line-height: 1.6;">
+    <li data-aos="fade-up" data-aos-delay="600">Interned at Virtusa Consulting Services Pvt. Ltd.</li>
+    <li data-aos="fade-up" data-aos-delay="700">Gained real-world experience in IT project delivery and teamwork.</li>
+    <li data-aos="fade-up" data-aos-delay="800">Practiced Agile methodologies and business-driven technical solutions.</li>
+  </ul>
 
-Focus on real-world applications and custom training programs to meet evolving tech trends.
+  <h3 data-aos="fade-up" data-aos-delay="900">📜 Certifications</h3>
+  <ul style="list-style: disc; padding-left: 20px; line-height: 1.6;">
+    <li data-aos="fade-up" data-aos-delay="1000">Java Programming & OOP Concepts – Great Learning Academy</li>
+    <li data-aos="fade-up" data-aos-delay="1100">AWS Partner Accreditation & Cloud Economics</li>
+    <li data-aos="fade-up" data-aos-delay="1200">ITIL Foundation – IT Service Management</li>
+    <li data-aos="fade-up" data-aos-delay="1300">Google Data Analytics Certification</li>
+    <li data-aos="fade-up" data-aos-delay="1400">Microsoft Excel & Email Etiquette – Udemy</li>
+  </ul>
 
-💻 IT Experience & Internships
-Interned at Virtusa Consulting Services Pvt. Ltd.
+  <h3 data-aos="fade-up" data-aos-delay="1500">🧠 Skills</h3>
+  <ul style="list-style: disc; padding-left: 20px; line-height: 1.6;">
+    <li data-aos="fade-up" data-aos-delay="1600">Programming: Java, Python, C, SQL</li>
+    <li data-aos="fade-up" data-aos-delay="1700">Tools: Power BI, Power Automate</li>
+    <li data-aos="fade-up" data-aos-delay="1800">Domains: Software Development, Data Analytics, IT Automation</li>
+  </ul>
 
-Gained real-world experience in IT project delivery and teamwork.
+  <h3 data-aos="fade-up" data-aos-delay="1900">🚀 My Vision</h3>
+  <ul style="list-style: disc; padding-left: 20px; line-height: 1.6;">
+    <li data-aos="fade-up" data-aos-delay="2000">Passionate about building impactful solutions.</li>
+    <li data-aos="fade-up" data-aos-delay="2100">Committed to continuous learning and empowering the next generation of tech professionals.</li>
+    <li data-aos="fade-up" data-aos-delay="2200">Use this portfolio to highlight skills, experience, and student-focused training journey.</li>
+  </ul>
 
-Practiced Agile methodologies and business-driven technical solutions.
+</section>
 
-📜 Certifications
-Java Programming & OOP Concepts – Great Learning Academy
-
-AWS Partner Accreditation & Cloud Economics
-
-ITIL Foundation – IT Service Management
-
-Google Data Analytics Certification
-
-Microsoft Excel & Email Etiquette – Udemy
-
-🧠 Skills
-Programming: Java, Python, C, SQL
-
-Tools: Power BI, Power Automate
-
-Domains: Software Development, Data Analytics, IT Automation
-
-🚀 My Vision
-Passionate about building impactful solutions.
-
-Committed to continuous learning and empowering the next generation of tech professionals.
-
-Use this portfolio to highlight skills, experience, and student-focused training journey.
-                </p>
                 <p>Through my portfolio, I aim to showcase not only my skills and achievements but also my dedication to nurturing the next generation of programmers. I am excited about the opportunities that lie ahead and am eager to continue growing both personally and professionally.</p>
                 <div class="box-container">
                     <div class="box">
@@ -475,6 +476,14 @@ window.addEventListener('scroll', () => {
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init();
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    easing: 'ease-in-out',
+    once: true
+  });
 </script>
 
 
