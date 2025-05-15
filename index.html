@@ -14,6 +14,9 @@
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="style.css">
+    <!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
 
 </head>
 
@@ -71,7 +74,8 @@
 
     <!-- about section starts  -->
 
-    <section class="about" id="about">
+   <section class="about" id="about" data-aos="fade-up">
+
 
         <h1 class="heading"> <span>Itz me</span> </h1>
 
@@ -127,7 +131,7 @@ I have a strong foundation in Java, Python, C, SQL, Power Automate, and Power BI
 
 
     <!-- experience -->
-    <section class="portfolio" id="portfolio">
+<section class="portfolio" id="portfolio" data-aos="zoom-in">
 
         <h1 class="heading"> Certificates </h1>
 
@@ -181,7 +185,7 @@ I have a strong foundation in Java, Python, C, SQL, Power Automate, and Power BI
     </section>
     <!-- service section starts  -->
 
-     <section class="service" id="service">
+<section class="service" id="service" data-aos="fade-up">
         <h1 class="heading"> Skills </h1>
         <div class="box-container">
             <div class="box">
@@ -242,7 +246,7 @@ I have a strong foundation in Java, Python, C, SQL, Power Automate, and Power BI
 
     <!-- experience section starts  -->
 
-    <section class="experience" id="experience">
+<section class="experience" id="experience" data-aos="fade-right" data-aos-duration="1000">
         <h1 class="heading"> Education  & Projects</h1>
 
         <div class="box-container">
@@ -445,6 +449,11 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+</script>
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
 </script>
 
 
