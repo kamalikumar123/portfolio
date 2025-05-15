@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
     <title>Portfolio</title>
 
     <!-- font awesome cdn link  -->
@@ -16,12 +18,6 @@
 </head>
 
 <body>
-
-
-
-
-
-
     <div id="menu-bars" class="fas fa-bars"></div>
 
     <!-- header section starts  -->
@@ -29,6 +25,9 @@
     <header>
 
         <a href="#" class="logo"> <span> Kamali Kumar</span></a>
+        <h1>KAMALI KUMAR</h1>
+<p><strong>Technical Trainer | Software Developer | AWS Certified</strong></p>
+
 
         <nav class="navbar">
             <a href="#home">Home</a>
@@ -425,6 +424,27 @@ I have a strong foundation in Java, Python, C, SQL, Power Automate, and Power BI
     <!-- custom js file link  -->
     <script src="script.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+window.addEventListener('scroll', () => {
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav a');
+
+  sections.forEach(sec => {
+    let top = window.scrollY;
+    let offset = sec.offsetTop - 150;
+    let height = sec.offsetHeight;
+    let id = sec.getAttribute('id');
+
+    if (top >= offset && top < offset + height) {
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        document.querySelector('nav a[href*=' + id + ']').classList.add('active');
+      });
+    }
+  });
+});
+</script>
+
 
 </body>
 
