@@ -1,225 +1,116 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
-
-:root {
-  --main-color: #2c53d2;
-  --light-bg: #f0f4ff;
-  --dark-color: #333;
-  --accent-color: #fff;
-}
-
-/* Global Reset */
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-}
-
-html {
-  font-size: 62.5%;
-  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--accent-color);
-  color: var(--dark-color);
+  font-family: 'Poppins', sans-serif;
+  background: #f9f9f9;
+  color: #333;
   line-height: 1.6;
-  padding-left: 250px; /* space for sidebar */
 }
 
-/* Links */
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* Sections */
-section {
-  padding: 2rem 5%;
-  min-height: 100vh;
-}
-
-.heading {
-  font-size: 3.5rem;
-  font-weight: bold;
-  color: var(--main-color);
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-}
-
-/* Buttons */
-.btn {
-  display: inline-block;
-  background: var(--main-color);
-  color: #fff;
-  padding: 1rem 2rem;
-  font-size: 1.6rem;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  margin-top: 1rem;
-}
-
-.btn:hover {
-  background: #1d3faa;
-  transform: translateY(-2px);
-}
-
-/* Navigation bar */
+/* Sidebar Navbar */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 250px;
   height: 100%;
-  background: var(--main-color);
-  padding: 2rem 1.5rem;
+  background: #2962ff;
+  padding-top: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-}
-
-.navbar h2 {
-  color: white;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
 }
 
 .navbar a {
   color: white;
-  font-size: 1.6rem;
-  margin-bottom: 1.5rem;
-  transition: color 0.3s ease;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: background 0.3s ease;
 }
 
 .navbar a:hover {
-  color: var(--accent-color);
-  font-weight: bold;
+  background: #0039cb;
 }
 
-/* About, Projects, Contact */
-.about,
-.projects,
-.contact {
-  background: var(--light-bg);
-  border-radius: 10px;
+/* Content Layout */
+.content {
+  margin-left: 250px;
   padding: 2rem;
-  margin-bottom: 3rem;
 }
 
-.about p,
-.contact p {
-  font-size: 1.6rem;
+section {
+  margin-bottom: 4rem;
 }
 
-/* Project cards */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 2rem;
+h1 {
+  font-size: 2.5rem;
+  color: #2962ff;
 }
 
-.project-card {
-  background: white;
-  border-radius: 10px;
-  padding: 1.5rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+h2 {
+  margin: 1rem 0;
+  color: #333;
 }
 
-.project-card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+h3 {
+  margin-top: 1rem;
 }
 
-.project-card h3 {
-  font-size: 2rem;
-  color: var(--main-color);
-  margin-bottom: 1rem;
+.profile-logo {
+  max-width: 200px;
+  display: block;
+  margin: 1.5rem auto;
 }
 
-.project-card p {
-  font-size: 1.4rem;
-}
-
-/* Contact form */
-.contact form {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact input,
-.contact textarea {
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  font-size: 1.5rem;
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: #2962ff;
+  color: white;
+  padding: 0.75rem 1.5rem;
   border-radius: 5px;
+  text-decoration: none;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
 }
 
-.contact textarea {
-  resize: vertical;
-  min-height: 100px;
+.btn:hover {
+  background: #0039cb;
+  transform: scale(1.05);
 }
 
-/* ===================== */
+/* Lists */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  padding: 0.5rem 0;
+}
+
 /* Responsive Design */
-/* ===================== */
-
-/* Tablets */
-@media (max-width: 1024px) {
-  body {
-    padding-left: 200px;
-  }
-  .navbar {
-    width: 200px;
-  }
-  .heading {
-    font-size: 3rem;
-  }
-}
-
-/* Mobile */
 @media (max-width: 768px) {
-  body {
-    padding-left: 0;
-  }
   .navbar {
     width: 100%;
     height: auto;
     position: relative;
     flex-direction: row;
-    align-items: center;
     justify-content: space-around;
   }
-  .navbar h2 {
-    font-size: 2rem;
-    margin-bottom: 0;
-  }
-  .navbar a {
-    margin: 0 1rem;
-    font-size: 1.4rem;
-  }
-  section {
-    padding: 2rem;
-    min-height: auto;
-  }
-}
 
-/* Small mobile */
-@media (max-width: 480px) {
-  .heading {
-    font-size: 2.5rem;
+  .navbar a {
+    padding: 1rem;
+    font-size: 1rem;
   }
-  .btn {
-    font-size: 1.4rem;
-    padding: 0.8rem 1.6rem;
-  }
-  .project-card h3 {
-    font-size: 1.8rem;
-  }
-  .project-card p {
-    font-size: 1.3rem;
+
+  .content {
+    margin-left: 0;
+    padding: 1rem;
   }
 }
