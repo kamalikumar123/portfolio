@@ -1,149 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <title>Kamali Kumar | Portfolio</title>
-
-    <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-
-    <!-- Lottie -->
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
-    <!-- AOS animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
-    <!-- Your stylesheet -->
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kamali Kumar Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Sidebar Navbar -->
+  <div class="navbar">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Education & Projects</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#contact">Contact</a>
+  </div>
 
-    <div id="menu-bars" class="fas fa-bars"></div>
-
-    <!-- Header -->
-    <header>
-        <a href="#" class="logo"><span>Kamali Kumar</span></a>
-        <p><strong>Technical Trainer | Software Developer | AWS Certified</strong></p>
-        <p class="decent-fade-in">Delivered comprehensive training to more than 2000 aspiring developers.</p>
-
-        <nav class="navbar">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#service">Skills</a>
-            <a href="#experience">Education & Projects</a>
-            <a href="#portfolio">Certificates</a>
-            <a href="#contact">Contact</a>
-        </nav>
-
-        <div class="follow">
-            <a href="https://leetcode.com/u/kamali1212/" class="leetcode"><img src="image.png" alt="Leetcode" /></a>
-            <a href="https://www.instagram.com/_kamaliii._/" class="fab fa-instagram"></a>
-            <a href="https://www.linkedin.com/in/kamali-kumar2622/" class="fab fa-linkedin"></a>
-        </div>
-    </header>
-
+  <!-- Main Content -->
+  <div class="content">
     <!-- Home Section -->
-    <section class="home" id="home">
-        <div class="content">
-            <span class="hi">Hi Buddy...</span>
-            <h3><span>WELCOME..!</span></h3>
-            <p class="info"><span id="typing-text">Technical Trainer & Java Developer</span></p>
-            <a href="#about" class="btn">About me</a>
-
-            <lottie-player src="./animation-cat.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
-        </div>
-
-        <div class="image">
-            <img src="college1.jpg" alt="College Image" />
-        </div>
-
-        <lottie-player
-            src="https://assets10.lottiefiles.com/packages/lf20_u4j3xm6r.json"
-            background="transparent"
-            speed="1"
-            style="width: 300px; height: 300px;"
-            loop
-            autoplay>
-        </lottie-player>
+    <section id="home">
+      <h1>Kamali Kumar</h1>
+      <h2>Technical Trainer | Software Developer | AWS Certified</h2>
+      <p>Delivered comprehensive training to more than 2000 aspiring developers.</p>
+      <img src="your-logo.png" alt="Logo" class="profile-logo">
+      <h3>Hi Buddy... <b>WELCOME..!</b></h3>
+      <p>Technical Trainer & Java Developer</p>
+      <a href="#about" class="btn">About me</a>
     </section>
 
     <!-- About Section -->
-    <section class="about" id="about" data-aos="fade-up">
-        <h1 class="heading"><span>Itz me</span></h1>
-        <div class="row-1">
-            <div class="image">
-                <img src="about-dp-img.jpg" alt="Profile Image" />
-            </div>
-            <div class="content">
-                <ul>
-                    <li>Experienced freelance trainer focused on teaching programming across various colleges.</li>
-                    <li>Passionate about education and fostering a positive learning environment.</li>
-                    <li>Believe that every student has the potential to excel with the right support.</li>
-                    <li>Design customized training programs tailored to each student’s needs.</li>
-                    <li>Emphasize <strong>hands-on learning</strong> and <strong>real-world applications</strong>.</li>
-                    <li>Continuously evolve teaching methods to match the fast-changing tech landscape.</li>
-                    <li>Aim to empower students for success in the tech industry.</li>
-                    <li>Currently working as a <strong>Java Developer at D2RAILABS</strong> since June 2024.</li>
-                </ul>
-
-                <h2 style="font-size: 28px;">IT Experience</h2>
-                <ul>
-                    <li>Interned at <strong>Virtusa Consulting Services Pvt. Ltd.</strong>
-                        <ul>
-                            <li>Gained hands-on experience in IT project execution and software development.</li>
-                            <li>Worked on real-world IT solutions using agile methodologies.</li>
-                            <li>Improved problem-solving, teamwork, and structured workflow handling.</li>
-                            <li>Applied business-driven technical implementations.</li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <h2 style="font-size: 28px;">Certifications</h2>
-                <ul>
-                    <li><strong>Java Programming & OOP Concepts</strong> (Great Learning Academy)</li>
-                    <li><strong>AWS Partner Accreditation & Cloud Economics</strong></li>
-                    <li><strong>ITIL Foundation in IT Service Management</strong></li>
-                    <li><strong>Google Data Analytics Certification</strong></li>
-                    <li><strong>Microsoft Excel & Email Etiquette</strong> (Udemy)</li>
-                </ul>
-
-                <h2 style="font-size: 28px;">Technical Skills</h2>
-                <ul>
-                    <li><strong>Languages:</strong> Java, Python, C, SQL</li>
-                    <li><strong>Tools:</strong> Power Automate, Power BI</li>
-                    <li><strong>Domains:</strong> Software Development, Data Analytics, IT Automation</li>
-                </ul>
-
-                <h2 style="font-size: 28px;">Vision & Goals</h2>
-                <ul>
-                    <li>Passionate about creating impactful tech solutions.</li>
-                    <li>Dedicated to lifelong learning and adapting to emerging technologies.</li>
-                    <li>Committed to nurturing the next generation of programmers.</li>
-                    <li>Excited about future opportunities to grow both personally and professionally.</li>
-                </ul>
-
-                <p>Through my portfolio, I aim to showcase not only my skills and achievements but also my dedication to nurturing the next generation of programmers.</p>
-
-                <div class="box-container">
-                    <div class="box">
-                        <p><span>Gender :</span> Female</p>
-                        <p><span>Language :</span> Tamil, English</p>
-                    </div>
-                    <div class="box">
-                        <p><span>Phone :</span> 9150581118</p>
-                        <p><span>E-mail :</span> kamalikumarvidhya@gmail.com</p>
-                    </div>
-                </div>
-
-                <a download href="KAMALI_SOFTWARE_ENGINEER_RESUME.pdf" class="btn">Download Resume</a>
-                <a download href="service letter.jpeg" class="btn">Experience</a>
-            </div>
-        </div>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I am a passionate Technical Trainer and Software Developer with expertise in 
+        programming, Data Structures & Algorithms, and AWS Cloud. 
+        My mission is to simplify complex topics and empower aspiring developers.
+      </p>
     </section>
 
+    <!-- Skills Section -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>Python</li>
+        <li>Java</li>
+        <li>Data Structures & Algorithms</li>
+        <li>AWS Cloud</li>
+        <li>SQL & Databases</li>
+      </ul>
+    </section>
+
+    <!-- Education & Projects Section -->
+    <section id="projects">
+      <h2>Education & Projects</h2>
+      <p>
+        <b>B.E Computer Science</b> – XYZ University<br>
+        <b>Projects:</b> Portfolio Website, AWS Deployment, Training Modules
+      </p>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates">
+      <h2>Certificates</h2>
+      <ul>
+        <li>AWS Certified Solutions Architect</li>
+        <li>Google Data Analytics</li>
+        <li>Java Full Stack Development</li>
+      </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:kamalikumarvidhya@gmail.com">kamalikumarvidhya@gmail.com</a></p>
+      <p>LinkedIn: <a href="#">linkedin.com/in/kamalikumarvidhya</a></p>
+    </section>
+  </div>
 </body>
 </html>
