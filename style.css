@@ -1,13 +1,8 @@
-/* ==== Global Reset ==== */
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-  scroll-behavior: smooth;
 }
 
 body {
@@ -17,161 +12,105 @@ body {
   line-height: 1.6;
 }
 
-/* ==== Root Colors ==== */
-:root {
-  --main-color: #2c53d2;
-  --secondary-color: #f39c12;
-  --text-dark: #333;
-  --text-light: #777;
-  --bg-light: #fff;
-}
-
-/* ==== Section Styling ==== */
-section {
-  padding: 5rem 10%;
-  min-height: 100vh;
-}
-
-.heading {
-  font-size: 3.5rem;
-  font-weight: 600;
-  color: var(--main-color);
-  text-transform: uppercase;
-  text-align: center;
-  margin-bottom: 3rem;
-  position: relative;
-}
-
-.heading span {
-  color: var(--secondary-color);
-}
-
-/* ==== Navbar ==== */
-header {
-  width: 100%;
-  padding: 2rem 10%;
-  background: var(--main-color);
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* Sidebar Navbar */
+.navbar {
   position: fixed;
   top: 0;
-  z-index: 1000;
-}
-
-header h1 {
-  font-size: 2.4rem;
-  font-weight: bold;
-}
-
-header nav a {
-  color: #fff;
-  margin-left: 2rem;
-  font-size: 1.6rem;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-header nav a:hover {
-  color: var(--secondary-color);
-}
-
-/* ==== Portfolio Section ==== */
-.portfolio .box-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-}
-
-.portfolio .box {
-  background: var(--bg-light);
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1);
-  text-align: center;
-  padding: 2rem 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.portfolio .box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 1rem 2rem rgba(0,0,0,0.15);
-}
-
-.portfolio .box img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: .5rem;
-}
-
-.portfolio .box h3 {
-  font-size: 2rem;
-  margin: 1rem 0;
-  color: var(--main-color);
-}
-
-/* ==== Pagination ==== */
-.pagination {
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background: #2962ff;
+  padding-top: 2rem;
   display: flex;
-  justify-content: center;
-  margin-top: 3rem;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  flex-direction: column;
 }
 
-.pagination a {
-  color: var(--main-color);
-  border: 1px solid var(--main-color);
-  padding: 0.8rem 1.5rem;
-  border-radius: 0.5rem;
+.navbar a {
+  color: white;
+  padding: 1rem 2rem;
   text-decoration: none;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
+  transition: background 0.3s ease;
+}
+
+.navbar a:hover {
+  background: #0039cb;
+}
+
+/* Content Layout */
+.content {
+  margin-left: 250px;
+  padding: 2rem;
+}
+
+section {
+  margin-bottom: 4rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #2962ff;
+}
+
+h2 {
+  margin: 1rem 0;
+  color: #333;
+}
+
+h3 {
+  margin-top: 1rem;
+}
+
+.profile-logo {
+  max-width: 200px;
+  display: block;
+  margin: 1.5rem auto;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: #2962ff;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 1rem;
   transition: all 0.3s ease;
 }
 
-.pagination a:hover {
-  background: var(--main-color);
-  color: #fff;
+.btn:hover {
+  background: #0039cb;
+  transform: scale(1.05);
 }
 
-.pagination a.active {
-  background: var(--main-color);
-  color: #fff;
-  font-weight: bold;
+/* Lists */
+ul {
+  list-style: none;
+  padding-left: 0;
 }
 
-/* ==== Footer ==== */
-footer {
-  background: var(--main-color);
-  color: #fff;
-  text-align: center;
-  padding: 2rem 10%;
-  margin-top: 3rem;
-  font-size: 1.4rem;
+ul li {
+  padding: 0.5rem 0;
 }
 
-footer a {
-  color: var(--secondary-color);
-  text-decoration: none;
-  margin: 0 1rem;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-/* ==== Responsive ==== */
+/* Responsive Design */
 @media (max-width: 768px) {
-  html {
-    font-size: 55%;
+  .navbar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-around;
   }
-  header {
-    flex-direction: column;
-    text-align: center;
+
+  .navbar a {
+    padding: 1rem;
+    font-size: 1rem;
   }
-  header nav {
-    margin-top: 1rem;
+
+  .content {
+    margin-left: 0;
+    padding: 1rem;
   }
 }
