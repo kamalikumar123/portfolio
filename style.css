@@ -1,170 +1,177 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio with Pagination</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: white;
-      margin: 0;
-      padding: 0;
-    }
+/* ==== Global Reset ==== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    :root {
-      --main-color: rgb(44, 83, 210);
-    }
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
 
-    * {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      line-height: 1.5;
-    }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
 
-    section {
-      padding: 2rem 5%;
-      min-height: 100vh;
-    }
+/* ==== Root Colors ==== */
+:root {
+  --main-color: #2c53d2;
+  --secondary-color: #f39c12;
+  --text-dark: #333;
+  --text-light: #777;
+  --bg-light: #fff;
+}
 
-    .heading {
-      font-size: 4rem;
-      padding-bottom: 1rem;
-      color: var(--main-color);
-      text-transform: uppercase;
-      text-align: center;
-    }
+/* ==== Section Styling ==== */
+section {
+  padding: 5rem 10%;
+  min-height: 100vh;
+}
 
-    /* ==== Portfolio Section ==== */
-    .portfolio .box-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: center;
-    }
+.heading {
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: var(--main-color);
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
 
-    .portfolio .box-container .box {
-      flex: 1 1 25rem;
-      max-width: 300px;
-      height: 22rem;
-      position: relative;
-      overflow: hidden;
-      border: 0.5rem solid #fff;
-      box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
-      background: #fff;
-      border-radius: .5rem;
-      text-align: center;
-    }
+.heading span {
+  color: var(--secondary-color);
+}
 
-    .portfolio .box-container .box img {
-      height: 70%;
-      width: 70%;
-      object-fit: cover;
-      border-radius: .5rem;
-      margin-top: 1rem;
-    }
+/* ==== Navbar ==== */
+header {
+  width: 100%;
+  padding: 2rem 10%;
+  background: var(--main-color);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
 
-    .portfolio .box-container .box h3 {
-      font-size: 2rem;
-      color: var(--main-color);
-      margin-top: 1rem;
-    }
+header h1 {
+  font-size: 2.4rem;
+  font-weight: bold;
+}
 
-    /* ==== Pagination ==== */
-    .pagination {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin: 3rem 0;
-      gap: 0.5rem;
-    }
+header nav a {
+  color: #fff;
+  margin-left: 2rem;
+  font-size: 1.6rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
 
-    .pagination a {
-      color: #333;
-      padding: 0.8rem 1.5rem;
-      text-decoration: none;
-      border: 1px solid var(--main-color);
-      border-radius: 0.5rem;
-      font-size: 1.6rem;
-      transition: all 0.3s ease;
-    }
+header nav a:hover {
+  color: var(--secondary-color);
+}
 
-    .pagination a:hover {
-      background: var(--main-color);
-      color: #fff;
-    }
+/* ==== Portfolio Section ==== */
+.portfolio .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
 
-    .pagination a.active {
-      background: var(--main-color);
-      color: #fff;
-      font-weight: bold;
-    }
+.portfolio .box {
+  background: var(--bg-light);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 2rem 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .pagination a.prev,
-    .pagination a.next {
-      font-weight: bold;
-    }
+.portfolio .box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 2rem rgba(0,0,0,0.15);
+}
 
-    /* ==== Mobile Optimization ==== */
-    @media (max-width: 600px) {
-      html {
-        font-size: 55%;
-      }
-      .portfolio .box-container {
-        flex-direction: column;
-        align-items: center;
-      }
-      .portfolio .box-container .box {
-        width: 90%;
-      }
-      .pagination a {
-        font-size: 1.4rem;
-        padding: 0.6rem 1.2rem;
-      }
-    }
-  </style>
-</head>
-<body>
+.portfolio .box img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: .5rem;
+}
 
-  <!-- Portfolio Section -->
-  <section class="portfolio" id="portfolio">
-    <h1 class="heading">My <span>Portfolio</span></h1>
+.portfolio .box h3 {
+  font-size: 2rem;
+  margin: 1rem 0;
+  color: var(--main-color);
+}
 
-    <div class="box-container">
-      <div class="box">
-        <img src="https://via.placeholder.com/200" alt="Project 1">
-        <h3>Project 1</h3>
-      </div>
-      <div class="box">
-        <img src="https://via.placeholder.com/200" alt="Project 2">
-        <h3>Project 2</h3>
-      </div>
-      <div class="box">
-        <img src="https://via.placeholder.com/200" alt="Project 3">
-        <h3>Project 3</h3>
-      </div>
-      <div class="box">
-        <img src="https://via.placeholder.com/200" alt="Project 4">
-        <h3>Project 4</h3>
-      </div>
-    </div>
+/* ==== Pagination ==== */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
 
-    <!-- Pagination -->
-    <div class="pagination">
-      <a href="#" class="prev">« Prev</a>
-      <a href="#" class="active">1</a>
-      <a href="#">2</a>
-      <a href="#">3</a>
-      <a href="#">4</a>
-      <a href="#" class="next">Next »</a>
-    </div>
-  </section>
+.pagination a {
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-size: 1.6rem;
+  transition: all 0.3s ease;
+}
 
-</body>
-</html>
+.pagination a:hover {
+  background: var(--main-color);
+  color: #fff;
+}
+
+.pagination a.active {
+  background: var(--main-color);
+  color: #fff;
+  font-weight: bold;
+}
+
+/* ==== Footer ==== */
+footer {
+  background: var(--main-color);
+  color: #fff;
+  text-align: center;
+  padding: 2rem 10%;
+  margin-top: 3rem;
+  font-size: 1.4rem;
+}
+
+footer a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  margin: 0 1rem;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 768px) {
+  html {
+    font-size: 55%;
+  }
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+  header nav {
+    margin-top: 1rem;
+  }
+}
