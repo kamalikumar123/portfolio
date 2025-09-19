@@ -735,77 +735,70 @@
         }
 
         /* Colleges Section */
-        .colleges {
-            background: var(--surface);
-        }
+.colleges {
+    background: var(--surface);
+}
 
-        .colleges-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-            gap: 3rem;
-            margin-bottom: 4rem;
-        }
+.colleges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
 
-        .college-card {
-            background: var(--background);
-            padding: 3rem 2rem;
-            border-radius: 1.5rem;
-            text-align: center;
-            border: 1px solid var(--border);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
+.college-card {
+    background: var(--background);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    text-align: center;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
 
-        .college-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.1), transparent);
-            transition: left 0.5s ease;
-        }
+.college-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.1), transparent);
+    transition: left 0.5s ease;
+}
 
-        .college-card:hover::before {
-            left: 100%;
-        }
+.college-card:hover::before {
+    left: 100%;
+}
 
-        .college-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--primary);
-        }
+.college-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary);
+}
 
-        .college-card .icon {
-            width: 5rem;
-            height: 5rem;
-            background: var(--gradient-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 2rem;
-        }
+.college-card h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--on-surface);
+    margin: 1rem 0;
+    line-height: 1.4;
+}
 
-        .college-card .icon i {
-            font-size: 2rem;
-            color: white;
-        }
+/* 🎓 College Images */
+.college-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    transition: transform 0.3s ease;
+}
 
-        .college-card h3 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: var(--on-surface);
-            margin-bottom: 1rem;
-            line-height: 1.4;
-        }
-
-        .college-card p {
-            color: var(--muted);
-            font-size: 1.4rem;
-        }
+.college-card:hover img {
+    transform: scale(1.05);
+}
 
         /* Pagination Styles */
         .pagination-container {
