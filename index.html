@@ -1649,31 +1649,47 @@ GUI, Java logic, edge cloud simulation, document handling with low-delay communi
     </section>
 
     <!-- Colleges Section -->
-    <section id="colleges" class="colleges section">
-        <div class="container">
-            <h2 class="section-title">Academic Collaborations</h2>
-            <p class="section-subtitle">
-                Prestigious institutions where I've delivered impactful training programs
-            </p>
-            
-            <div class="colleges-grid" id="collegesGrid">
-                <!-- Colleges will be populated by JavaScript -->
+<section id="colleges" class="colleges section">
+    <div class="container">
+        <h2 class="section-title">Academic Collaborations</h2>
+        <p class="section-subtitle">
+            Prestigious institutions where I've delivered impactful training programs
+        </p>
+        <!-- College Images Grid -->
+        <div class="colleges-grid" id="collegesGrid">
+            <div class="college-card">
+                <img src="images/college1.jpg" alt="College 1">
             </div>
-            
-            <div class="pagination-container">
-                <div class="pagination-info" id="collegesPaginationInfo"></div>
-                <ul class="pagination" id="collegesPagination"></ul>
-                <div class="items-per-page">
-                    <label for="collegesItemsPerPage">Show:</label>
-                    <select id="collegesItemsPerPage">
-                        <option value="6">6 items</option>
-                        <option value="9">9 items</option>
-                        <option value="12">12 items</option>
-                    </select>
-                </div>
+
+            <div class="college-card">
+                <img src="images/college2.jpg" alt="College 2">
+            </div>
+
+            <div class="college-card">
+                <img src="images/college3.jpg" alt="College 3">
+            </div>
+
+            <div class="college-card">
+                <img src="images/college4.jpg" alt="College 4">
             </div>
         </div>
-    </section>
+        
+        <!-- Pagination -->
+        <div class="pagination-container">
+            <div class="pagination-info" id="collegesPaginationInfo"></div>
+            <ul class="pagination" id="collegesPagination"></ul>
+            <div class="items-per-page">
+                <label for="collegesItemsPerPage">Show:</label>
+                <select id="collegesItemsPerPage">
+                    <option value="4">4 items</option>
+                    <option value="6">6 items</option>
+                    <option value="9">9 items</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</section>
+
 
     <!-- Contact Section -->
     <section id="contact" class="contact section">
