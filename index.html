@@ -1,503 +1,250 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kamali Kumar | Portfolio</title>
+    <link rel="stylesheet" href="assets/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/newcss.css" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-    <title>Portfolio</title>
-
-    <!-- font awesome cdn link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-    <!-- custom css file link  -->
-    <link rel="stylesheet" href="style.css">
-    <!-- AOS CSS -->
-
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
-</head>
-
-<body>
-    <div id="menu-bars" class="fas fa-bars"></div>
-
-    <!-- header section starts  -->
-
-    <header>
-
-        <a href="#" class="logo"> <span> Kamali Kumar</span></a>
-<p><strong>Technical Trainer | Software Developer | AWS Certified</strong></p>
-        <p class="decent-fade-in">Delivered comprehensive training to more than 2000 aspiring developers.</p>
-
-
-
-        <nav class="navbar">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#service">Skills</a>
-            <a href="#experience">Education & Projects</a>
-            <a href="#portfolio">Certificates</a>
-            <a href="#contact">Contact</a>
-        </nav>
-        <div class="follow">
-            <a href="https://leetcode.com/u/kamali1212/" class="leetcode">
-               <img src="image.png" alt=""></a> <!-- LeetCode link -->
-            <a href="https://www.instagram.com/_kamaliii._/" class="fab fa-instagram"></a>
-            <a href="https://www.linkedin.com/in/kamali-kumar2622/" class="fab fa-linkedin"></a>
+  <body oncontextmenu="return false">
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#" class="nav__logo">Kamali Kumar</a>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list grid">
+            <li class="nav__item"><a href="#home" class="nav__link active-link"><i class="uil uil-estate nav__icon"></i>Home</a></li>
+            <li class="nav__item"><a href="#about" class="nav__link"><i class="uil uil-user nav__icon"></i>About</a></li>
+            <li class="nav__item"><a href="#skills" class="nav__link"><i class="uil uil-file-alt nav__icon"></i>Skills</a></li>
+            <li class="nav__item"><a href="#qualification" class="nav__link"><i class="uil uil-briefcase-alt nav__icon"></i>Qualification</a></li>
+            <li class="nav__item"><a href="#portfolio" class="nav__link"><i class="uil uil-scenery nav__icon"></i>Projects</a></li>
+            <li class="nav__item"><a href="#contact" class="nav__link"><i class="uil uil-message nav__icon"></i>Contact</a></li>
+          </ul>
+          <i class="uil uil-times nav__close" id="nav-close"></i>
         </div>
-        
-
-
+        <div class="nav__btns">
+          <i class="uil uil-moon change-theme" id="theme-button"></i>
+          <div class="nav__toggle" id="nav-toggle"><i class="uil uil-apps"></i></div>
+        </div>
+      </nav>
     </header>
 
-    
+    <main class="main">
+      <!--========================= Home =====================-->
+      <section class="home section" id="home">
+        <div class="home__container container grid">
+          <div class="home__content grid">
+            <div class="home__social">
+              <a href="https://www.linkedin.com/in/kamali-kumar2622/" target="_blank" class="home__social-icon"><i class="uil uil-linkedin-alt home__icon"></i></a>
+              <a href="https://github.com/" target="_blank" class="home__social-icon"><i class="uil uil-github-alt home__icon"></i></a>
+              <a href="https://www.instagram.com/kamaliii./" target="_blank" class="home__social-icon"><i class="uil uil-instagram home__icon"></i></a>
+              <a href="https://leetcode.com/u/kamali1212/" target="_blank" class="home__social-icon"><i class="uil uil-brackets-curly home__icon"></i></a>
+            </div>
 
+            <div class="home__img">
+              <img src="assets/img/about-dp-img.jpg" alt="Profile Image" class="home__blob-img"/>
+            </div>
 
-    <section class="home" id="home">
-        <div class="content">
-            <span class="hi"> Hi Buddy... </span>
-            <h3> <span>WELCOME..! </span> </h3>
-            <p class="info"> <span id="typing-text"></span> </p>
-            <a href="#about" class="btn">About me</a>
+            <div class="home__data">
+              <h1 class="home__title">Hi, I'm Kamali Kumar</h1>
+              <h3 class="home__subtitle">Java Developer | Technical Trainer | Software Developer | AWS Certified</h3>
+              <p class="home__description">
+                Delivered comprehensive training to more than 2,000 aspiring developers. Experienced freelance trainer focused on teaching programming across various colleges, fostering hands-on learning and real-world applications.
+              </p>
+              <a href="#contact" class="button button--flex">Contact Me<i class="uil uil-message button__icon"></i></a>
+            </div>
+          </div>
+
+          <div class="home__scroll">
+            <a href="#about" class="home__scroll-button button--flex">
+              <i class="uil uil-mouse-alt home__scroll-mouse"></i>
+              <span class="home__scroll-name">Scroll down</span>
+              <i class="uil uil-arrow-down home__scroll-arrow"></i>
+            </a>
+          </div>
         </div>
+      </section>
 
-        <div class="image">
-            <img src="college1.jpg.jpg" alt="">
+      <!--======================= About========================-->
+      <section class="about section" id="about">
+        <h2 class="section__title">About Me</h2>
+        <span class="section__subtitle">My introduction</span>
+        <div class="about__container container grid">
+          <img src="assets/img/about-dp-img.jpg" alt="" class="about__img" />
+          <div class="about__data">
+            <p class="about__description">
+              Experienced freelance trainer focused on teaching programming across various colleges. Passionate about education and fostering a positive learning environment. Believes every student has the potential to excel with the right support. Emphasizes hands-on learning and real-world applications.
+            </p>
+
+            <div class="about__info">
+              <div><span class="about__info-title">8.72</span><span class="about__info-name">CGPA</span></div>
+              <div><span class="about__info-title">2000+</span><span class="about__info-name">Students Trained</span></div>
+              <div><span class="about__info-title">1+</span><span class="about__info-name">Years Experience</span></div>
+            </div>
+
+            <div class="about__buttons">
+              <a download="" href="assets/KAMALI_SOFTWARE_ENGINEER_RESUME.pdf" class="button button--flex">Download CV<i class="fas fa-download button__icon"></i></a>
+            </div>
+          </div>
         </div>
-    </section>
-    
+      </section>
 
-
-    <!-- home section ends -->
-
-    <!-- about section starts  -->
-
-   <section class="about" id="about" data-aos="fade-up">
-
-
-        <h1 class="heading"> <span>Itz me</span> </h1>
-
-        <div class="row-1">
-
-            <div class="image">
-                <img src="about-dp-img.jpg" alt="profile">
+      <!--===================== SKILLS =====================-->
+      <section class="skills section" id="skills">
+        <h2 class="section__title">Skills</h2>
+        <span class="section__subtitle">My technical level</span>
+        <div class="skills__container container grid">
+          <div>
+            <div class="skills__content skills__open">
+              <div class="skills__header">
+                <i class="fas fa-pencil-ruler skills__icon"></i>
+                <div><h1 class="skills__title">Programming Languages</h1></div>
+                <i class="uil uil-angle-down skills__arrow"></i>
+              </div>
+              <div class="skills__list grid">
+                <div class="skills__data"><h3 class="skills__name">Java</h3></div>
+                <div class="skills__data"><h3 class="skills__name">Python</h3></div>
+                <div class="skills__data"><h3 class="skills__name">C</h3></div>
+                <div class="skills__data"><h3 class="skills__name">C++</h3></div>
+                <div class="skills__data"><h3 class="skills__name">SQL</h3></div>
+              </div>
             </div>
 
-            <div class="content">
- 
-<section id="about" style="padding: 20px; font-family: Arial, sans-serif; font-size: 18px; line-height: 1.6;">
-  <ul>
-    <li>Experienced freelance trainer focused on teaching programming across various colleges.</li>
-    <li>Passionate about education and fostering a positive learning environment.</li>
-    <li>Believe that every student has the potential to excel with the right support.</li>
-    <li>Design customized training programs tailored to each student’s needs.</li>
-    <li>Emphasize <strong>hands-on learning</strong> and <strong>real-world applications</strong>.</li>
-    <li>Continuously evolve teaching methods to match the fast-changing tech landscape.</li>
-    <li>Aim to empower students for success in the tech industry.</li>
-  </ul>
-
-  <h2 style="font-size: 28px;">IT Experience</h2>
-  <ul>
-    <li>Interned at <strong>Virtusa Consulting Services Pvt. Ltd.</strong>
-      <ul>
-        <li>Gained hands-on experience in IT project execution and software development.</li>
-        <li>Worked on real-world IT solutions using agile methodologies.</li>
-        <li>Improved problem-solving, teamwork, and structured workflow handling.</li>
-        <li>Applied business-driven technical implementations.</li>
-      </ul>
-    </li>
-  </ul>
-
-  <h2 style="font-size: 28px;">Certifications</h2>
-  <ul>
-    <li><strong>Java Programming & OOP Concepts</strong> (Great Learning Academy) – Strengthened core software development skills.</li>
-    <li><strong>AWS Partner Accreditation & Cloud Economics</strong> – Gained insight into cloud computing and cost optimization.</li>
-    <li><strong>ITIL Foundation in IT Service Management</strong> – Learned IT service best practices and process improvement.</li>
-    <li><strong>Google Data Analytics Certification</strong> – Developed skills in data analysis, decision-making, and business intelligence.</li>
-    <li><strong>Microsoft Excel & Email Etiquette</strong> (Udemy) – Improved data handling and professional communication skills.</li>
-  </ul>
-
-  <h2 style="font-size: 28px;">Technical Skills</h2>
-  <ul>
-    <li><strong>Languages:</strong> Java, Python, C, SQL</li>
-    <li><strong>Tools:</strong> Power Automate, Power BI</li>
-    <li><strong>Domains:</strong> Software Development, Data Analytics, IT Automation</li>
-  </ul>
-
-  <h2 style="font-size: 28px;">Vision & Goals</h2>
-  <ul>
-    <li>Passionate about creating impactful tech solutions.</li>
-    <li>Dedicated to lifelong learning and adapting to emerging technologies.</li>
-    <li>Committed to nurturing the next generation of programmers.</li>
-    <li>Excited about future opportunities to grow both personally and professionally.</li>
-  </ul>
-</section>
-
-
-
-                <p>Through my portfolio, I aim to showcase not only my skills and achievements but also my dedication to nurturing the next generation of programmers. I am excited about the opportunities that lie ahead and am eager to continue growing both personally and professionally.</p>
-                <div class="box-container">
-                    <div class="box">
-                        <p> <span> Gender : </span> Female </p>
-                        <p> <span> Language : </span> Tamil, English </p>
-                    </div>
-                    <div class="box">
-                        <p> <span> Phone : </span> 9150581118 </p>
-                        <p> <span> E-mail : </span> kamalikumarvidhya@gmail.com</p>
-                    </div>
-                </div>
-
-                <a download="" href="KAMALI_SOFTWARE ENGINEER_RESUME.pdf" class="btn">Download Resume</a>
-                <a download="" href="service letter.jpeg" class="btn">Experience</a>
+            <div class="skills__content skills__close">
+              <div class="skills__header">
+                <i class="fas fa-code skills__icon"></i>
+                <div><h1 class="skills__title">Tools & Domains</h1></div>
+                <i class="uil uil-angle-down skills__arrow"></i>
+              </div>
+              <div class="skills__list grid">
+                <div class="skills__data"><h3 class="skills__name">Power BI</h3></div>
+                <div class="skills__data"><h3 class="skills__name">Power Automate</h3></div>
+                <div class="skills__data"><h3 class="skills__name">MS Excel</h3></div>
+                <div class="skills__data"><h3 class="skills__name">MS Word</h3></div>
+                <div class="skills__data"><h3 class="skills__name">RPA</h3></div>
+              </div>
             </div>
+          </div>
         </div>
-      
-    </section>
+      </section>
 
-    <!-- about section ends -->
+      <!--==================== Qualifications ==================-->
+      <section class="qualification__section service__section" id="qualification">
+        <h2 class="section__title">Qualification</h2>
+        <span class="section__subtitle">My personal journey</span>
 
+        <div class="qualification__container container grid services__container">
+          <div class="qualification__tabs">
+            <div class="qualification__button button--flex qualification__active" data-target="#education">
+              <i class="uil uil-graduation-cap qualification__icon"></i>Education
+            </div>
+            <div class="qualification__button button--flex" data-target="#certifications">
+              <i class="uil uil-award qualification__icon"></i>Certifications
+            </div>
+          </div>
 
-    <!-- experience -->
-<section class="portfolio" id="portfolio" data-aos="zoom-in">
+          <div class="qualification__sections">
+            <div class="qualification__content qualification__active" id="education">
+              <div class="qualification__data">
+                <h3>B.E Computer Science and Engineering</h3>
+                <p>K.S.R College of Engineering | CGPA: 8.72</p>
+              </div>
+              <div class="qualification__data">
+                <h3>Higher Secondary School (HSC)</h3>
+                <p>Vimala Matriculation Higher Secondary School | 75%</p>
+              </div>
+              <div class="qualification__data">
+                <h3>Secondary School (SSLC)</h3>
+                <p>Vimala Matriculation Higher Secondary School | 98%</p>
+              </div>
+            </div>
 
-        <h1 class="heading"> Certificates </h1>
-
-        <div class="box-container">
-            <div class="box">
-                <img src="aws partner.jpeg" alt="">
+            <div class="qualification__content" id="certifications">
+              <div class="qualification__data">
+                <h3>Java Programming & OOP Concepts</h3>
+                <p>Great Learning Academy</p>
+              </div>
+              <div class="qualification__data">
+                <h3>AWS Partner Accreditation & Cloud Economics</h3>
+              </div>
+              <div class="qualification__data">
+                <h3>ITIL Foundation</h3>
+                <p>IT Service Management</p>
+              </div>
+              <div class="qualification__data">
+                <h3>Google Data Analytics Certification</h3>
+              </div>
+              <div class="qualification__data">
+                <h3>Microsoft Excel & Email Etiquette</h3>
+                <p>Udemy</p>
+              </div>
             </div>
-            <div class="box">
-                <img src="Creating measures & metrics.jpeg" alt="">
-            </div>
-            <div class="box">
-                <img src="powerpoint for beginners.jpeg" alt="">
-            </div>
-            <div class="box">
-                <img src="Aws cloud economics.jpeg" alt="">
-            </div>
-            <div class="box">
-                <img src="1.jpeg" alt="">
-            </div>
-            <div class="box">
-                <img src="2.jpeg" alt="">
-            </div>
-            <div class="box">
-                <img src="3.jpeg" alt="">
-            </div>
-            <div class="box">
-                <img src="4.jpeg" alt="">
-            </div>
-            <div class="box">
-                <img src="6.jpeg" alt="">
-            </div>
-            <div class="box">
-                <img src="7.jpeg" alt="">
-            </div>
-            <div class="box">
-                <img src="8.jpeg" alt="">
-            </div>
-            <div class="box">
-                <img src="9.jpeg" alt="">
-            </div>
-            <div class="box">
-                <img src="10.jpeg" alt="">
-            </div>
-            <div class="box">
-                <img src="11.jpeg" alt="">
-            </div>
-            <div class="box">
-                <img src="12.jpeg" alt="">
-            </div>
+          </div>
         </div>
-    </section>
-    <!-- service section starts  -->
+      </section>
 
-<section class="service" id="service" data-aos="fade-up">
-        <h1 class="heading"> Skills </h1>
-        <div class="box-container">
-            <div class="box">
-                <i class="fas fa-code"></i>
-                <h3>Core Java</h3>
+      <!--====================== Projects ====================-->
+      <section class="portfolio section" id="portfolio">
+        <h2 class="section__title">Projects</h2>
+        <span class="section__subtitle">My Work</span>
+
+        <div class="portfolio__container container swiper-container">
+          <div class="swiper-wrapper">
+            <div class="portfolio__content swiper-slide">
+              <img src="assets/img/college1.jpg" alt="" class="portfolio__img"/>
+              <h3 class="portfolio__title">Online Feedback Form</h3>
+              <p>HTML, CSS, PHP – Full-stack development, dynamic form generation, admin dashboard, secure login.</p>
             </div>
-            <div class="box">
-                <i class="fas fa-code"></i>
-                <h3>Power Automate</h3>
+            <div class="portfolio__content swiper-slide">
+              <img src="assets/img/college2.jpg" alt="" class="portfolio__img"/>
+              <h3 class="portfolio__title">Mobility Aware & Delay Sensitive Service Provisioning</h3>
+              <p>Java, NetBeans – GUI, Java logic, edge cloud simulation, document handling with low-delay communication.</p>
             </div>
-            <div class="box">
-                <i class="fas fa-code"></i>
-                <h3>Power BI</h3>
-            </div>
-            <div class="box">
-                <i class="fas fa-code"></i>
-                <h3>C</h3>
-            </div>
-            <div class="box">
-                <i class="fas fa-code"></i>
-                <h3>C++</h3>
-            </div>
-            <div class="box">
-                <i class="fas fa-code"></i>
-                <h3>SQL</h3>
-            </div>
-            <div class="box">
-                <i class="fas fa-code"></i>
-                <h3>Data Structures</h3>
-            </div>
-            <div class="box">
-                <i class="fas fa-code"></i>
-                <h3>Python</h3>
-            </div>
-            <div class="box">
-                <i class="fas fa-code"></i>
-                <h3>MS Excel</h3>
-            </div>
-            <div class="box">
-                <i class="fas fa-code"></i>
-                <h3>MS Word</h3>
-            </div>
-            <div class="box">
-                <i class="fas fa-code"></i>
-                <h3>MS PowerPoint</h3>
-            </div>
-            <div class="box">
-                <i class="fas fa-code"></i>
-                <h3>Robotic Process Automation</h3>
-            </div>
+          </div>
         </div>
-    </section> 
+      </section>
 
-
-
-  
-    <!-- service section ends -->
-
-    <!-- experience section starts  -->
-
-<section class="experience" id="experience" data-aos="fade-right" data-aos-duration="1000">
-        <h1 class="heading"> Education  & Projects</h1>
-
-        <div class="box-container">
-            <div class="box">
-                <div class="content">
-                    <h3>B.E <br> Computer Science and Engineering</h3>
-                    <p>K.S.R College of Engineering | CGPA 8.72 |</p>
-                </div>
+      <!--====================== Contact ====================-->
+      <section class="contact section" id="contact">
+        <h2 class="section__title">Contact Me</h2>
+        <span class="section__subtitle">Get in touch</span>
+        <div class="contact__container container grid">
+          <div class="contact__info">
+            <div class="contact__card">
+              <i class="uil uil-phone contact__card-icon"></i>
+              <h3>Call Me</h3>
+              <p>+91 9150581118</p>
+              <a href="https://api.whatsapp.com/send?phone=9150581118&text=Hello, Kamali">WhatsApp</a>
             </div>
-
-            <div class="box">
-                <div class="content">
-                    <h3>Higher Secondary School<br>(HSC)</h3>
-                    <p>Vimala Matriculation Higher Secondary School | 75% |</p>
-                </div>
+            <div class="contact__card">
+              <i class="uil uil-envelope contact__card-icon"></i>
+              <h3>Email</h3>
+              <p>kamalikumarvidhya@gmail.com</p>
+              <a href="mailto:kamalikumarvidhya@gmail.com">Send a message</a>
             </div>
-            <div class="box">
-                <div class="content">
-                    <h3>Secondary School Leaving Certificate<br>(SSLC)</h3>
-                    <p>Vimala Matriculation Higher Secondary School | 98% |</p>
-                </div>
+            <div class="contact__card">
+              <i class="uil uil-location-pin contact__card-icon"></i>
+              <h3>Address</h3>
+              <p>Thuraiyur, Tamil Nadu 621010</p>
             </div>
-            <div class="box">
-                <div class="content">
-                    <h3>ONLINE FEEDBACK FORM<br>TECHNOLOGIES USED: HTML, CSS, PHP</h3>
-                    <p>DESCRIPTION: Developed to override the problems in practical manual systems.
-                    <br><strong>Key Features:</strong>
-      <ul>
-        <li>Secure login and session management</li>
-        <li>Dynamic form generation and validation</li>
-        <li>Admin dashboard to view feedback reports</li>
-      </ul>
-      <strong>Role:</strong> Full-stack developer – built both frontend and backend, implemented database connectivity using PHP and MySQL.
-                </p>
-                </div>
-            </div>
-            <div class="box">
-                <div class="content">
-                    <h3>MOBILITY AWARE & DELAY SENSITIVE SERVICE PROVISIONING IN MOBILE EDGE CLOUD NETWORKS<br>TECHNOLOGIES USED: JAVA, NETBEANS</h3>
-                    <p>DESCRIPTION: Used for safety measures to upload & download documents.
-                    <br><strong>Key Features:</strong>
-      <ul>
-        <li>User authentication and document transfer interface</li>
-        <li>Simulated edge cloud environment to manage mobile user access</li>
-        <li>Algorithms to prioritize low-delay communication paths</li>
-      </ul>
-      <strong>Role:</strong> Developer – created GUI in NetBeans, implemented core Java logic for mobility and delay-aware document handling.
-                </p>
-                </div>
-            </div>
+          </div>
+          <form action="https://formspree.io/f/yourformid" method="POST" class="contact__form">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="button button--flex">Send Message<i class="uil uil-message button__icon"></i></button>
+          </form>
         </div>
+      </section>
+    </main>
 
-        <h1 class="heading"> Work Experience </h1>
-        <div class="box-container">
-            <div class="box">
-                <div class="content">
-                    <h3>Technical Trainer</h3>
-                    <p>Worked as a Technical Trainer for over a year, teaching more than 2,000 students across various colleges. Skilled in explaining technical topics in a simple way with a focus on hands-on learning. </p>
-            </div>
-            <div class="box">
-                <div class="content">
-                    <h3>KNOWLEDGE TRANSFER SPECIALIST</h3>
-                       <h3>Freelance technical trainer</h3>
-
-                    <p>Provided programming training to various colleges and companies in C, C++, Java, and Python. Designed customized training programs to meet the needs of students and organizations.Passionate about helping students gain real-world skills and succeed.</p>
-                </div>
-            </div>
-            <div class="box">
-                <div class="content">
-                    <h3>Intern - Delivery, Virtusa Consulting Services Pvt. Ltd.</h3>
-                    <p>Completed internship from February 6th to May 5th, 2023. Gained hands-on experience in project delivery and teamwork.Have practical experience with Power BI and Power Automate, including handling ticket-raising processes. Also worked on an offline project in Virtusa, showing strong problem-solving skills and adaptability. </p>
-                </div></p>
-                </div>
-            </div>
-        </div>
-
-        <h1 class="heading"> Colleges Worked With </h1>
-        <div class="box-container " style="display: block;">
-            <div class="box">
-                <p>K.Ramakrishna College of Engineering, Trichy</p>
-                <p>M.Kumarasamy College of Engineering, Karur</p>
-                <p>Arasu Arts and Science College for Women, Karur</p>
-                <p>Paavai College of Engineering, Namakkal</p>
-                <p>Loyola Institute of Technology, Chennai</p>
-                <p>Saveetha School of Engineering, Chennai</p>
-                <p>AVS College of Engineering, Salem</p>
-                <p>DMI College of Engineering, Chennai</p>
-                <p>Sri Manakula vinayagar College of Engineering, Pondicherry</p>
-                <p>S.A College of Arts and Science, Chennai</p>
-                <p>Sivanthi Aditanar College of Engineering, Tiruchenthur</p>
-                <p>M.B.U University, Tirupathi</p>
-                <p>T.K.V College of Engineering, Kerala</p>
-                <p>Athiyaman College of Engineering, Hosur</p>
-                <p>Saranathan College of Engineering, Tirchy</p>
-                <p>K.S.R College of Engineering and Technology, Tiruchengode</p>
-                <p>K.P.R College of Engineering, Coimbatore</p>
-                <p>AVIT College of Engineering, Chennai</p>
-                <p>Kalaingar karunanidhi institute of technology, Coimbatore</p>
-                <p>Meenakshi Sundararajan Engineering college, Chennai</p>
-
-                
-            </div>
-            <div class="clg-img" style="padding: 10px;">
-                <img src="college1.jpg" alt="" width="250px" height="250px" >
-                <img src="college2.jpg" alt="" width="250px" height="250px" >
-
-                <img src="college3.jpg" alt="" width="250px" height="250px" >
-               <img src="college4.jpg" alt="" width="250px" height="250px" >
-
-                
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-    <!-- experience section ends -->
-
-    <!-- portfolio section starts  -->
-
-
-
-    <!-- portfolio section ends -->
-
-    <!-- contact section starts  -->
-
-    <section class="contact" id="contact">
-
-        <h1 class="heading"> Contact <span> me </span> </h1>
-
-        <div class="icons-container">
-
-            <div class="icons">
-                <a href="mailto:kamalikumarvidhya@gmail.com"><i class="fas fa-envelope"></i></a>
-                <h3>Click email</h3>
-                <p>kamalikumarvidhya@gmail.com</p>
-            </div>
-
-            <div class="icons">
-                <a href="https://api.whatsapp.com/send?phone=9150581118&text=Hello, Kamali" class="button button__small">
-                    <i class="fas fa-phone"></i>
-                </a>
-                <h3>Click whatsapp</h3>
-                <p>9150581118</p>
-            </div>
-
-            <div class="icons">
-                <i class="fas fa-map-marker-alt"></i>
-                <h3>Address</h3>
-                <p>Thuraiyur, Tamil Nadu 621010</p>
-            </div>
-
-        </div>
-
-        <div class="row">
-
-            <form action="https://formspree.io/f/xnqknoje" method="POST">
-
-                <input type="text" name="Name" placeholder="name" class="box">
-                <input type="email" name="email" placeholder="email" class="box">
-
-                <textarea name="message" placeholder="message" id="" cols="30" rows="10"></textarea>
-
-                <input type="submit" class="btn" value="send message">
-
-            </form>
-
-            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d271.2771879349471!2d78.60194571526314!3d11.150745660301498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTHCsDA5JzAyLjUiTiA3OMKwMzYnMDcuNCJF!5e1!3m2!1sen!2sin!4v1690016443221!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-
-    </section>
-
-    <!-- contact section ends -->
-
-    <!-- footer section  -->
-    <a href="#">
-        <footer class="footer"> created by <span> Ms. Kamali</span> | all rights reserved! </footer>
-    </a>
-
-    <!-- custom js file link  -->
-    <script src="script.js"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script>
-window.addEventListener('scroll', () => {
-  const sections = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('nav a');
-
-  sections.forEach(sec => {
-    let top = window.scrollY;
-    let offset = sec.offsetTop - 150;
-    let height = sec.offsetHeight;
-    let id = sec.getAttribute('id');
-
-    if (top >= offset && top < offset + height) {
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        document.querySelector('nav a[href*=' + id + ']').classList.add('active');
-      });
-    }
-  });
-});
-</script>
-<!-- AOS JS -->
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 800,
-    easing: 'ease-in-out',
-    once: true
-  });
-</script>
-
-
-</body>
-
+    <script src="assets/swiper-bundle.min.js"></script>
+    <script src="assets/main.js"></script>
+  </body>
 </html>
-
-
-
