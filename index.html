@@ -742,9 +742,13 @@
             font-size: 1.4rem;
         }
 
-        /* Colleges Section */
+  /* ============================= */
+/*        Colleges Section       */
+/* ============================= */
+
 .colleges {
     background: var(--surface);
+    padding: 6rem 0;
 }
 
 .colleges-grid {
@@ -754,6 +758,7 @@
     margin-bottom: 4rem;
 }
 
+/* College Card */
 .college-card {
     background: var(--background);
     padding: 2rem;
@@ -763,21 +768,6 @@
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-}
-
-.college-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.1), transparent);
-    transition: left 0.5s ease;
-}
-
-.college-card:hover::before {
-    left: 100%;
 }
 
 .college-card:hover {
@@ -791,10 +781,9 @@
     font-weight: 600;
     color: var(--on-surface);
     margin: 1rem 0;
-    line-height: 1.4;
 }
 
-/* 🎓 College Images */
+/* College Card Images */
 .college-card img {
     width: 100%;
     height: 200px;
@@ -808,114 +797,103 @@
     transform: scale(1.05);
 }
 
-        /* Pagination Styles */
-        .pagination-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 4rem;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
+/* ============================= */
+/*        Extra Images Grid      */
+/* ============================= */
 
-        .pagination-info {
-            font-size: 1.4rem;
-            color: var(--muted);
-            background: var(--surface);
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-        }
+.college-images-extra {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 50px;
+}
 
-        .pagination {
-            display: flex;
-            list-style: none;
-            gap: 0.5rem;
-            align-items: center;
-        }
+.college-images-extra img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+}
 
-        .pagination li {
-            border-radius: 8px;
-            overflow: hidden;
-        }
+.college-images-extra img:hover {
+    transform: scale(1.05);
+}
 
-        .pagination a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 4rem;
-            height: 4rem;
-            padding: 0 1rem;
-            text-decoration: none;
-            color: var(--on-surface);
-            background: var(--surface);
-            border: 1px solid var(--border);
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
+/* ============================= */
+/*        Pagination Styles      */
+/* ============================= */
 
-        .pagination a:hover {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-            transform: translateY(-2px);
-        }
+.pagination-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
 
-        .pagination .active a {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
+.pagination-info {
+    font-size: 1.4rem;
+    color: var(--muted);
+}
 
-        .pagination .disabled a {
-            color: var(--muted);
-            cursor: not-allowed;
-            background: var(--background);
-        }
+.pagination {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+    align-items: center;
+}
 
-        .pagination .disabled a:hover {
-            background: var(--background);
-            color: var(--muted);
-            transform: none;
-        }
+.pagination li {
+    border-radius: 8px;
+    overflow: hidden;
+}
 
-        .pagination .prev-next {
-            padding: 0 1.5rem;
-            font-weight: 600;
-        }
+.pagination a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 4rem;
+    height: 4rem;
+    padding: 0 1rem;
+    text-decoration: none;
+    color: var(--on-surface);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
 
-        .items-per-page {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            background: var(--surface);
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-        }
+.pagination a:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
 
-        .items-per-page label {
-            font-size: 1.4rem;
-            color: var(--on-surface);
-            font-weight: 500;
-        }
+.pagination .active a {
+    background: var(--primary);
+    color: white;
+}
 
-        .items-per-page select {
-            background: var(--background);
-            color: var(--on-surface);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 0.8rem 1.2rem;
-            font-size: 1.4rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+.pagination .disabled a {
+    opacity: 0.5;
+    pointer-events: none;
+}
 
-        .items-per-page select:focus {
-            border-color: var(--primary);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        }
+.items-per-page {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.items-per-page select {
+    padding: 0.8rem 1.2rem;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+}
+
 
         /* Contact Section */
         .contact {
