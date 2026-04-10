@@ -32,22 +32,72 @@
             <p class="section-subtitle">Professional journey and impact across development and training roles</p>
             <div class="cards">
                 <div class="card fade-in">
+                    <div class="role">Technical Trainer & Knowledge Transfer Specialist</div>
+                    <div class="company">Freelance</div>
+                    <div class="date">Dec 2026 - Apr 2026</div>
+                    <div class="project-visual">
+                        <img src="experience-technical-trainer.png" alt="Technical trainer delivering classroom session" width="1200" height="675" loading="lazy">
+                    </div>
+                    <ul class="exp-points">
+                        <li>Successfully trained over 2000+ students across 19+ colleges in C, Java, and Python.</li>
+                        <li>Developed practical curricula and delivered hands-on workshops for industry readiness.</li>
+                        <li>Conducted live coding sessions, assessments, and structured mentoring support.</li>
+                    </ul>
+                </div>
+                <div class="card fade-in">
                     <div class="role">Java & Spring Boot Developer</div>
                     <div class="company">D2RAILABS</div>
                     <div class="date">June 2025 - Nov 2025</div>
-                    <p>Previously served as a Developer at D2RAILABS, specializing in Core Java, Spring Boot, REST APIs, and Microservices. Designed and implemented scalable backend systems, integrated APIs for seamless client operations, and optimized database performance using Hibernate/JPA.</p>
+                    <div class="project-visual">
+                        <img src="experience-d2railabs.png" alt="D2RAILABS training and development activity" width="1200" height="675" loading="lazy">
+                    </div>
+                    <ul class="exp-points">
+                        <li>Developed scalable backend applications using Core Java and Spring Boot.</li>
+                        <li>Designed and implemented RESTful APIs and microservices for client-facing systems.</li>
+                        <li>Integrated third-party APIs for seamless business operations.</li>
+                        <li>Optimized database performance using Hibernate/JPA query tuning.</li>
+                        <li>Collaborated in Agile/Scrum teams, handled production issues, and supported code reviews.</li>
+                    </ul>
                 </div>
                 <div class="card fade-in">
-                    <div class="role">Technical Trainer & Knowledge Transfer Specialist</div>
+                    <div class="role">Senior Technical Tutor & Corporate Trainer</div>
                     <div class="company">Freelance</div>
                     <div class="date">2023 - 2025</div>
-                    <p>Successfully trained over 2000+ students across 19+ colleges in C, Java, and Python. Developed practical curricula and conducted hands-on workshops focused on industry readiness.</p>
+                    <div class="project-visual">
+                        <img src="experience-senior-tutor.png" alt="Senior tutor session with students in classroom" width="1200" height="675" loading="lazy">
+                    </div>
+                    <ul class="exp-points">
+                        <li>Delivered corporate-level training programs for students and professionals across multiple organizations.</li>
+                        <li>Specialized in Core Java, Advanced Java, Spring Boot, and backend development.</li>
+                        <li>Trained 2000+ learners with focus on real-time industry use cases and placement readiness.</li>
+                        <li>Designed structured learning paths aligned to company-specific hiring requirements.</li>
+                        <li>Conducted bootcamps, mock interviews, coding assessments, and project mentorship.</li>
+                    </ul>
+                </div>
+                <div class="card fade-in">
+                    <div class="role">TECHNICAL TRAINER</div>
+                    <div class="company">Terv</div>
+                    <div class="date">08/2023 - 10/2023</div>
+                    <div class="project-visual">
+                        <img src="terv-training.png" alt="Technical trainer conducting engineering student session" width="1200" height="675" loading="lazy">
+                    </div>
+                    <ul class="exp-points">
+                        <li>Conducted high-impact training sessions for 2,000+ engineering students across multiple colleges.</li>
+                        <li>Received 100%+ positive feedback for engagement and technical clarity.</li>
+                    </ul>
                 </div>
                 <div class="card fade-in">
                     <div class="role">Software Engineering Intern</div>
                     <div class="company">Virtusa Consulting Services Pvt. Ltd.</div>
                     <div class="date">February 2023 - May 2023</div>
-                    <p>Worked with project delivery and agile workflows, including Power BI and Power Automate use cases, ticket handling, and collaborative implementation support.</p>
+                    <div class="project-visual">
+                        <img src="virtusa-internship.png" alt="Virtusa internship technical session and campus training activity" width="1200" height="675" loading="lazy">
+                    </div>
+                    <ul class="exp-points">
+                        <li>Worked with project delivery and agile workflows in a real-time environment.</li>
+                        <li>Supported Power BI and Power Automate use cases for business process improvements.</li>
+                        <li>Handled ticketing tasks and collaborative implementation support with teams.</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -89,8 +139,9 @@
         document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
     </script>
     <script type="module">
-        import { initParticleBackground } from new URL('./js/page-particles.mjs', import.meta.url);
-        initParticleBackground({ canvasId: 'page-particles', variant: 1, fullPage: true });
+        import(new URL('./js/page-particles.mjs', import.meta.url)).then(({ initParticleBackground }) => {
+            initParticleBackground({ canvasId: 'page-particles', variant: 0, fullPage: true });
+        });
     </script>
 </body>
 </html>

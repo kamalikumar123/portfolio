@@ -35,13 +35,27 @@
                     <div class="title">B.E Computer Science and Engineering</div>
                     <div class="school">K.S.R College of Engineering</div>
                     <div class="date">2019 - 2023</div>
-                    <p>Graduated with CGPA 8.72, with focus on software development and system design, including web and edge-computing academic projects.</p>
+                    <div class="project-visual">
+                        <img src="college-photo.png" alt="College photo from academic program" width="1200" height="675" loading="lazy">
+                    </div>
+                    <ul class="exp-points">
+                        <li>Graduated with CGPA 8.72, specializing in software development and system design.</li>
+                        <li>Built academic projects in web engineering and mobile edge-computing solutions.</li>
+                        <li>Strengthened fundamentals in algorithms, databases, networking, and software architecture.</li>
+                    </ul>
                 </div>
                 <div class="card fade-in">
                     <div class="title">Higher Secondary Education</div>
                     <div class="school">Vimala Matriculation Higher Secondary School</div>
                     <div class="date">2017 - 2019</div>
-                    <p>Completed HSC with 75% and SSLC with 98%, building a strong foundation in mathematics and sciences.</p>
+                    <div class="project-visual">
+                        <img src="school-gate.png" alt="Vimala Matriculation Higher Secondary School entrance" width="1200" height="675" loading="lazy">
+                    </div>
+                    <ul class="exp-points">
+                        <li>Completed HSC with 75% and SSLC with exceptional 99%.</li>
+                        <li>Built strong foundations in mathematics, science, and problem-solving.</li>
+                        <li>Actively participated in academic and technical learning activities.</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -83,8 +97,9 @@
         document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
     </script>
     <script type="module">
-        import { initParticleBackground } from new URL('./js/page-particles.mjs', import.meta.url);
-        initParticleBackground({ canvasId: 'page-particles', variant: 2, fullPage: true });
+        import(new URL('./js/page-particles.mjs', import.meta.url)).then(({ initParticleBackground }) => {
+            initParticleBackground({ canvasId: 'page-particles', variant: 0, fullPage: true });
+        });
     </script>
 </body>
 </html>

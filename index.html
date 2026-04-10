@@ -12,21 +12,21 @@
     --primary-dark: #6D28D9;
     --primary-light: #C4B5FD;
 
-    --secondary: #475569;
+    --secondary: #CBD5E1;
     --accent: #EC4899;
     --accent-hot: #F472B6;
     --accent-cyan: #22D3EE;
 
-    --surface: #FFFFFF;
-    --surface-glass: rgba(255, 255, 255, 0.94);
-    --background: #FDF4FF;
+    --surface: rgba(18, 10, 44, 0.88);
+    --surface-glass: rgba(22, 12, 50, 0.9);
+    --background: #09051B;
     --background-deep: #0B0618;
 
-    --on-surface: #0F172A;
-    --on-background: #0F172A;
+    --on-surface: #E2E8F0;
+    --on-background: #E2E8F0;
 
-    --muted: #64748B;
-    --border: #E9D5FF;
+    --muted: #94A3B8;
+    --border: rgba(196, 181, 253, 0.35);
 
     --shadow: 0 4px 6px -1px rgb(139 92 246 / 0.12);
     --shadow-lg: 0 10px 15px -3px rgb(236 72 153 / 0.15);
@@ -35,7 +35,7 @@
     --gradient-primary: linear-gradient(135deg, #8B5CF6 0%, #EC4899 45%, #22D3EE 100%);
     --gradient-secondary: linear-gradient(135deg, #4C1D95 0%, #7C3AED 100%);
     --gradient-accent: linear-gradient(135deg, #EC4899 0%, #F472B6 50%, #22D3EE 100%);
-    --gradient-page: linear-gradient(165deg, #FFF7ED 0%, #FDF4FF 35%, #ECFEFF 70%, #EEF2FF 100%);
+    --gradient-page: radial-gradient(circle at 20% 10%, #150D33 0%, #0D0823 42%, #050311 100%);
 }
 
 
@@ -68,8 +68,10 @@
             width: 100%;
             height: 100%;
             display: block;
-            z-index: 0;
+            z-index: 1;
             pointer-events: none;
+            mix-blend-mode: screen;
+            opacity: 0.62;
         }
 
         /* Custom Scrollbar */
@@ -176,7 +178,7 @@
         .section {
             padding: 8rem 0;
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
 
         .section-title {
@@ -209,6 +211,7 @@
             max-width: 60rem;
             margin-left: auto;
             margin-right: auto;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
         }
 
         .btn {
@@ -251,7 +254,7 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(11, 6, 28, 0.78);
+            background: rgba(8, 4, 22, 0.86);
             backdrop-filter: blur(14px);
             border-bottom: 1px solid rgba(139, 92, 246, 0.35);
             animation: slideInDown 0.8s ease;
@@ -383,10 +386,10 @@
             padding-top: 10rem;
             padding-bottom: 6rem;
             box-sizing: border-box;
-            background: radial-gradient(ellipse 100% 80% at 20% 30%, rgba(139, 92, 246, 0.45) 0%, transparent 55%),
-                radial-gradient(ellipse 80% 60% at 85% 70%, rgba(236, 72, 153, 0.4) 0%, transparent 50%),
-                radial-gradient(ellipse 70% 50% at 50% 100%, rgba(34, 211, 238, 0.25) 0%, transparent 45%),
-                linear-gradient(160deg, #07030f 0%, #12082a 40%, #0a1628 100%);
+            background: radial-gradient(ellipse 100% 80% at 20% 30%, rgba(139, 92, 246, 0.26) 0%, transparent 55%),
+                radial-gradient(ellipse 80% 60% at 85% 70%, rgba(236, 72, 153, 0.22) 0%, transparent 50%),
+                radial-gradient(ellipse 70% 50% at 50% 100%, rgba(34, 211, 238, 0.16) 0%, transparent 45%),
+                linear-gradient(160deg, rgba(7, 3, 15, 0.35) 0%, rgba(18, 8, 42, 0.4) 40%, rgba(10, 22, 40, 0.3) 100%);
         }
 
         .hero::after {
@@ -395,7 +398,7 @@
             inset: 0;
             z-index: 1;
             pointer-events: none;
-            background: linear-gradient(180deg, transparent 0%, rgba(7, 3, 15, 0.25) 100%);
+            background: linear-gradient(180deg, transparent 0%, rgba(7, 3, 15, 0.12) 100%);
         }
 
         .hero .container {
@@ -428,6 +431,7 @@
             font-weight: 700;
             margin-bottom: 2rem;
             line-height: 1.2;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
         }
 
         .hero-text .subtitle {
@@ -438,6 +442,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.35));
         }
 
         .hero-text .description {
@@ -445,6 +450,7 @@
             margin-bottom: 3rem;
             opacity: 0.9;
             line-height: 1.8;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
         }
 
         .typing-text {
@@ -477,7 +483,7 @@
 
         /* About Section */
         .about {
-            background: var(--surface);
+            background: transparent;
         }
 
         .about-content {
@@ -579,7 +585,7 @@
         }
 
         .skill-card {
-            background: var(--surface);
+            background: rgba(18, 10, 44, 0.72);
             padding: 3rem 2rem;
             border-radius: 1.5rem;
             text-align: center;
@@ -664,7 +670,7 @@
 
         /* Journey (Experience / Education / Projects) — simple stacked cards, no timeline */
         .experience {
-            background: var(--surface);
+            background: transparent;
         }
 
         .journey-layout {
@@ -692,7 +698,7 @@
         }
 
         .journey-card {
-            background: var(--background);
+            background: rgba(16, 9, 40, 0.62);
             padding: 3rem;
             border-radius: 1rem;
             box-shadow: var(--shadow);
@@ -739,10 +745,21 @@
 
         .journey-card .project-visual img {
             width: 100%;
-            height: auto;
-            max-height: 36rem;
-            object-fit: cover;
+            height: min(46rem, 66vw);
+            object-fit: contain;
+            object-position: center;
+            background: rgba(6, 3, 18, 0.7);
             display: block;
+        }
+
+        .exp-points {
+            margin: 1.2rem 0 0 1.8rem;
+            color: #dbeafe;
+            line-height: 1.65;
+        }
+
+        .exp-points li {
+            margin-bottom: 0.6rem;
         }
 
         /* Certificates Section */
@@ -754,7 +771,7 @@
         }
 
         .certificate-card {
-            background: var(--surface);
+            background: rgba(18, 10, 44, 0.74);
             border-radius: 1.5rem;
             overflow: hidden;
             box-shadow: var(--shadow);
@@ -820,7 +837,7 @@
 /* ============================= */
 
 .colleges {
-    background: var(--surface);
+    background: transparent;
     padding: 6rem 0;
 }
 
@@ -833,7 +850,7 @@
 
 /* College Card */
 .college-card {
-    background: var(--background);
+    background: rgba(16, 9, 40, 0.76);
     padding: 2rem;
     border-radius: 1.5rem;
     text-align: center;
@@ -870,28 +887,20 @@
     transform: scale(1.05);
 }
 
-/* ============================= */
-/*        Extra Images Grid      */
-/* ============================= */
-
-.college-images-extra {
+.reference-gallery {
+    margin-top: 3rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    margin-top: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.4rem;
 }
 
-.college-images-extra img {
+.reference-gallery img {
     width: 100%;
-    height: 250px;
+    height: min(360px, 56vw);
     object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    transition: 0.3s ease;
-}
-
-.college-images-extra img:hover {
-    transform: scale(1.05);
+    border-radius: 14px;
+    border: 1px solid rgba(196, 181, 253, 0.4);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
 }
 
 /* ============================= */
@@ -970,7 +979,7 @@
 
         /* Contact Section */
         .contact {
-            background: var(--gradient-primary);
+            background: rgba(9, 5, 27, 0.72);
             color: white;
         }
 
@@ -1100,7 +1109,7 @@
         /* Footer */
         .footer {
             position: relative;
-            z-index: 1;
+            z-index: 2;
             background: var(--on-surface);
             color: white;
             text-align: center;
@@ -1669,28 +1678,72 @@ I have recently resigned from my position and am actively seeking new job opport
                     <h3 class="journey-group-title">Experience</h3>
                     <div class="journey-cards">
                         <article class="journey-card fade-in">
-                            <h3>Java & Spring Boot Developer</h3>
-                            <div class="company">D2RAILABS</div>
-                            <div class="date">June 2025 - Nov 2025</div>
-                            <p>
-                                Previously served as a Developer at D2RAILABS, specializing in Core Java, Spring Boot, REST APIs, and Microservices. Designed and implemented scalable backend systems, integrated APIs for seamless client operations, and optimized database performance using Hibernate/JPA. Collaborated effectively within Agile teams to deliver robust enterprise solutions while ensuring high standards of code quality, security, and maintainability.
-                            </p>
+                            <h3>Technical Trainer &amp; Knowledge Transfer Specialist</h3>
+                            <div class="company">Freelance</div>
+                            <div class="date">Dec 2026 - Apr 2026</div>
+                            <div class="project-visual">
+                                <img src="experience-technical-trainer.png" alt="Technical trainer delivering classroom session" width="1200" height="675" loading="lazy">
+                            </div>
+                            <ul class="exp-points">
+                                <li>Successfully trained over 2000+ students across 19+ colleges in C, Java, and Python.</li>
+                                <li>Developed practical curricula and delivered hands-on workshops for industry readiness.</li>
+                                <li>Conducted live coding sessions, assessments, and structured mentoring support.</li>
+                            </ul>
                         </article>
                         <article class="journey-card fade-in">
-                            <h3>Technical Trainer & Knowledge Transfer Specialist</h3>
+                            <h3>Java &amp; Spring Boot Developer</h3>
+                            <div class="company">D2RAILABS</div>
+                            <div class="date">June 2025 - Nov 2025</div>
+                            <div class="project-visual">
+                                <img src="experience-d2railabs.png" alt="D2RAILABS training and development activity" width="1200" height="675" loading="lazy">
+                            </div>
+                            <ul class="exp-points">
+                                <li>Developed scalable backend applications using Core Java and Spring Boot.</li>
+                                <li>Designed and implemented RESTful APIs and microservices for client-facing systems.</li>
+                                <li>Integrated third-party APIs for seamless business operations.</li>
+                                <li>Optimized database performance using Hibernate/JPA query tuning.</li>
+                                <li>Collaborated in Agile/Scrum teams, handled production issues, and supported code reviews.</li>
+                            </ul>
+                        </article>
+                        <article class="journey-card fade-in">
+                            <h3>Senior Technical Tutor &amp; Corporate Trainer</h3>
                             <div class="company">Freelance</div>
                             <div class="date">2023 - 2025</div>
-                            <p>
-                                Successfully trained over 2000+ students across 19+ prestigious colleges in programming fundamentals including C, Java, and Python. Developed customized training curricular and conducted hands-on workshops focusing on practical skill development and industry readiness.
-                            </p>
+                            <div class="project-visual">
+                                <img src="experience-senior-tutor.png" alt="Senior tutor session with students in classroom" width="1200" height="675" loading="lazy">
+                            </div>
+                            <ul class="exp-points">
+                                <li>Delivered corporate-level training programs for students and professionals across multiple organizations.</li>
+                                <li>Specialized in Core Java, Advanced Java, Spring Boot, and backend development.</li>
+                                <li>Trained 2000+ learners with focus on real-time industry use cases and placement readiness.</li>
+                                <li>Designed structured learning paths aligned to company-specific hiring requirements.</li>
+                                <li>Conducted bootcamps, mock interviews, coding assessments, and project mentorship.</li>
+                            </ul>
+                        </article>
+                        <article class="journey-card fade-in">
+                            <h3>TECHNICAL TRAINER</h3>
+                            <div class="company">Terv</div>
+                            <div class="date">08/2023 - 10/2023</div>
+                            <div class="project-visual">
+                                <img src="terv-training.png" alt="Technical trainer conducting engineering student session" width="1200" height="675" loading="lazy">
+                            </div>
+                            <ul class="exp-points">
+                                <li>Conducted high-impact training sessions for 2,000+ engineering students across multiple colleges.</li>
+                                <li>Received 100%+ positive feedback for engagement and technical clarity.</li>
+                            </ul>
                         </article>
                         <article class="journey-card fade-in">
                             <h3>Software Engineering Intern</h3>
                             <div class="company">Virtusa Consulting Services Pvt. Ltd.</div>
                             <div class="date">February 2023 - May 2023</div>
-                            <p>
-                                Gained hands-on experience in project delivery, agile methodologies, and collaborative teamwork. Worked extensively with Power BI and Power Automate, including ticket management processes. Contributed to offline projects demonstrating strong problem-solving abilities.
-                            </p>
+                            <div class="project-visual">
+                                <img src="virtusa-internship.png" alt="Virtusa internship technical session and campus training activity" width="1200" height="675" loading="lazy">
+                            </div>
+                            <ul class="exp-points">
+                                <li>Worked with project delivery and agile workflows in a real-time environment.</li>
+                                <li>Supported Power BI and Power Automate use cases for business process improvements.</li>
+                                <li>Handled ticketing tasks and collaborative implementation support with teams.</li>
+                            </ul>
                         </article>
                     </div>
                 </div>
@@ -1704,9 +1757,12 @@ I have recently resigned from my position and am actively seeking new job opport
                             <div class="project-visual">
                                 <img src="ecommerce-turtle-project.png" alt="E-commerce Turtle project — modern web development showcase" width="1200" height="675" loading="lazy">
                             </div>
-                            <p>
-                                Built and deployed scalable backend infrastructure serving 10000+ users and handling 10,000+ daily API requests. Developed 20+ REST APIs, secured with Spring Security &amp; OAuth 2.0, optimized MySQL queries (35% faster response time), and maintained 99% uptime using AWS &amp; Jenkins CI/CD.
-                            </p>
+                            <ul class="exp-points">
+                                <li>Built and deployed scalable backend infrastructure serving 10000+ users and 10,000+ daily API requests.</li>
+                                <li>Developed 20+ REST APIs secured with Spring Security and OAuth 2.0.</li>
+                                <li>Optimized MySQL queries using Hibernate/JPA, improving response time by around 35%.</li>
+                                <li>Maintained high reliability through AWS deployment and Jenkins CI/CD workflows.</li>
+                            </ul>
                         </article>
                         <article class="journey-card fade-in">
                             <h3>Online Feedback Form</h3>
@@ -1714,9 +1770,11 @@ I have recently resigned from my position and am actively seeking new job opport
                             <div class="project-visual">
                                 <img src="online-feedback-form.png" alt="Why feedback matters — infographic for the online feedback form project" width="1200" height="675" loading="lazy">
                             </div>
-                            <p>
-                                Full-stack development, dynamic form generation, admin dashboard, secure login.
-                            </p>
+                            <ul class="exp-points">
+                                <li>Built a full-stack feedback platform with dynamic form generation and secure login flow.</li>
+                                <li>Implemented admin dashboard features for response management and reporting.</li>
+                                <li>Improved usability with structured validation and responsive UI behavior.</li>
+                            </ul>
                         </article>
                         <article class="journey-card fade-in">
                             <h3>Mobility Aware &amp; Delay Sensitive Service Provisioning in Mobile Edge Cloud Networks</h3>
@@ -1724,9 +1782,11 @@ I have recently resigned from my position and am actively seeking new job opport
                             <div class="project-visual">
                                 <img src="mobility-aware-project.png" alt="Mobility-aware mobile edge cloud network architecture — edge servers, IoT devices, and cloud collaboration" width="1200" height="675" loading="lazy">
                             </div>
-                            <p>
-                                GUI, Java logic, edge cloud simulation, document handling with low-delay communication.
-                            </p>
+                            <ul class="exp-points">
+                                <li>Developed GUI-based simulation modules for mobility-aware and delay-sensitive provisioning.</li>
+                                <li>Implemented Java logic for document handling and service routing in edge-cloud scenarios.</li>
+                                <li>Focused on low-latency communication behavior and performance-aware service placement.</li>
+                            </ul>
                         </article>
                     </div>
                 </div>
@@ -1738,17 +1798,27 @@ I have recently resigned from my position and am actively seeking new job opport
                             <h3>B.E Computer Science and Engineering</h3>
                             <div class="company">K.S.R College of Engineering</div>
                             <div class="date">2019 - 2023</div>
-                            <p>
-                                Graduated with CGPA 8.72, specializing in software development and system design. Led multiple academic projects including web development and mobile edge computing solutions.
-                            </p>
+                            <div class="project-visual">
+                                <img src="college-photo.png" alt="College photo from academic program" width="1200" height="675" loading="lazy">
+                            </div>
+                            <ul class="exp-points">
+                                <li>Graduated with CGPA 8.72, specializing in software development and system design.</li>
+                                <li>Built academic projects in web engineering and mobile edge-computing solutions.</li>
+                                <li>Strengthened foundations in algorithms, databases, networking, and software architecture.</li>
+                            </ul>
                         </article>
                         <article class="journey-card fade-in">
                             <h3>Higher Secondary Education</h3>
                             <div class="company">Vimala Matriculation Higher Secondary School</div>
                             <div class="date">2017 - 2019</div>
-                            <p>
-                                Completed HSC with 75% and SSLC with exceptional 98%, demonstrating consistent academic excellence and strong foundation in mathematics and sciences.
-                            </p>
+                            <div class="project-visual">
+                                <img src="school-gate.png" alt="Vimala Matriculation Higher Secondary School entrance" width="1200" height="675" loading="lazy">
+                            </div>
+                            <ul class="exp-points">
+                                <li>Completed HSC with 75% and SSLC with exceptional 99%.</li>
+                                <li>Built strong foundations in mathematics, science, and analytical problem-solving.</li>
+                                <li>Maintained consistent academic performance with active school-level participation.</li>
+                            </ul>
                         </article>
                     </div>
                 </div>
@@ -1808,17 +1878,6 @@ I have recently resigned from my position and am actively seeking new job opport
                     <option value="12">12 items</option>
                 </select>
             </div>
-        </div>
-
-        <!-- 🔥 Static College Images (Added Correctly Inside Section) -->
-        <div class="college-images-extra">
-            <img src="./college1.jpg" alt="College 1">
-            <img src="./college2.jpg" alt="College 2">
-            <img src="./college3.jpg" alt="College 3">
-            <img src="./college4.jpg" alt="College 4">
-            <img src="./college5.jpeg" alt="College 5">
-            <img src="./college6.jpeg" alt="College 5">
-
         </div>
 
     </div>
@@ -1888,6 +1947,17 @@ I have recently resigned from my position and am actively seeking new job opport
                         Send Message
                     </button>
                 </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="references" class="section">
+        <div class="container">
+            <h2 class="section-title">Reference Pictures</h2>
+            <p class="section-subtitle">Recent training and institution event snapshots</p>
+            <div class="reference-gallery">
+                <img src="reference-new-1.png" alt="Reference picture from training event">
+                <img src="reference-new-2.png" alt="Reference picture from lab training session">
             </div>
         </div>
     </section>
@@ -2428,8 +2498,9 @@ I have recently resigned from my position and am actively seeking new job opport
         });
     </script>
     <script type="module">
-        import { initParticleBackground } from new URL('./js/page-particles.mjs', import.meta.url);
-        initParticleBackground({ canvasId: 'page-particles', variant: 0, fullPage: true });
+        import(new URL('./js/page-particles.mjs', import.meta.url)).then(({ initParticleBackground }) => {
+            initParticleBackground({ canvasId: 'page-particles', variant: 0, fullPage: true });
+        });
     </script>
 </body>
 </html>

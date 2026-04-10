@@ -1,121 +1,129 @@
 /**
- * Three.js particles + wireframe shapes for portfolio pages.
+ * Professional neon-tunnel style 3D canvas animation.
+ * No external dependencies; works reliably on all pages.
  *
- * Host anywhere: import with
- *   import { initParticleBackground } from new URL('./js/page-particles.mjs', import.meta.url);
- * so the module URL always matches the page (GitHub Pages /portfolio/, custom domain, etc.).
- * Three.js is loaded from jsDelivr over HTTPS.
- *
- * Note: Browsers often block ES modules on file:// — use any static server for local preview.
- */
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
-
-/**
  * @param {{ canvasId: string; variant?: number; fullPage?: boolean }} opts
  */
 export function initParticleBackground({ canvasId, variant = 0, fullPage = false }) {
     const canvas = document.getElementById(canvasId);
     if (!canvas) return;
-
-    const kp = [
-        [8.5, 2.4, 128, 16],
-        [7, 3, 120, 14],
-        [9, 2.2, 140, 18],
-        [6.5, 2.8, 100, 12]
-    ];
-    const [kP, kQ, kT, kR] = kp[variant % kp.length];
-
-    const knotColors = [0xff4ecd, 0x22d3ee, 0xc084fc, 0xfbbf24];
-    const innerColors = [0x22d3ee, 0xff4ecd, 0x34d399, 0xf472b6];
-
-    const renderer = new THREE.WebGLRenderer({
-        canvas,
-        antialias: true,
-        alpha: true,
-        powerPreference: 'high-performance'
-    });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.setClearColor(0x000000, 0);
-
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(52, 2, 0.1, 320);
-    camera.position.set(0, 0, 44);
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
 
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    let count = isMobile ? 850 : 2300;
-    if (reduceMotion) {
-        count = Math.min(420, Math.floor(count * 0.32));
-    }
-    const positions = new Float32Array(count * 3);
-    const colors = new Float32Array(count * 3);
-    const palette = [
-        new THREE.Color(0xff2d95),
-        new THREE.Color(0x22d3ee),
-        new THREE.Color(0xa855f7),
-        new THREE.Color(0xfbbf24),
-        new THREE.Color(0x34d399)
-    ];
+    const speed = reduceMotion ? 0.12 : 0.34;
+    const starCount = reduceMotion ? 140 : isMobile ? 380 : 760;
+    const tunnelCount = reduceMotion ? 16 : isMobile ? 24 : 34;
 
-    const seed = variant * 17.3;
-    for (let i = 0; i < count; i++) {
-        const u = Math.random();
-        const v = Math.random();
-        const theta = u * Math.PI * 2 + seed * 0.01;
-        const phi = Math.acos(2 * v - 1);
-        const r = 10 + Math.random() * 34;
-        const sinPhi = Math.sin(phi);
-        positions[i * 3] = r * sinPhi * Math.cos(theta);
-        positions[i * 3 + 1] = r * sinPhi * Math.sin(theta);
-        positions[i * 3 + 2] = r * Math.cos(phi);
-        const c = palette[Math.floor(Math.random() * palette.length)];
-        colors[i * 3] = c.r;
-        colors[i * 3 + 1] = c.g;
-        colors[i * 3 + 2] = c.b;
-    }
-
-    const geo = new THREE.BufferGeometry();
-    geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    geo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-
-    const mat = new THREE.PointsMaterial({
-        size: isMobile ? 0.15 : 0.1,
-        vertexColors: true,
-        transparent: true,
-        opacity: 0.88,
-        blending: THREE.AdditiveBlending,
-        depthWrite: false,
-        sizeAttenuation: true
-    });
-    const points = new THREE.Points(geo, mat);
-    scene.add(points);
-
-    const knot = new THREE.Mesh(
-        new THREE.TorusKnotGeometry(kP, kQ, kT, kR),
-        new THREE.MeshBasicMaterial({
-            color: knotColors[variant % knotColors.length],
-            wireframe: true,
-            transparent: true,
-            opacity: 0.13
-        })
-    );
-    scene.add(knot);
-
-    const inner = new THREE.Mesh(
-        new THREE.IcosahedronGeometry(5.2, 1),
-        new THREE.MeshBasicMaterial({
-            color: innerColors[variant % innerColors.length],
-            wireframe: true,
-            transparent: true,
-            opacity: 0.1
-        })
-    );
-    scene.add(inner);
-
-    const speed = (1 + variant * 0.08) * (reduceMotion ? 0.22 : 1);
-    let t = variant * 0.5;
+    let w = 0;
+    let h = 0;
+    let cx = 0;
+    let cy = 0;
+    let running = true;
+    let t = variant * 0.7;
     let mx = 0;
     let my = 0;
+
+    const stars = [];
+    for (let i = 0; i < starCount; i++) {
+        stars.push({
+            x: (Math.random() * 2 - 1) * 1.2,
+            y: (Math.random() * 2 - 1) * 1.2,
+            z: Math.random(),
+            c: i % 3 === 0 ? '#22d3ee' : i % 3 === 1 ? '#ff4ecd' : '#a78bfa'
+        });
+    }
+
+    function resize() {
+        w = fullPage ? window.innerWidth : canvas.clientWidth;
+        h = fullPage ? window.innerHeight : canvas.clientHeight;
+        if (!w || !h) return;
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = Math.floor(w * dpr);
+        canvas.height = Math.floor(h * dpr);
+        canvas.style.width = `${w}px`;
+        canvas.style.height = `${h}px`;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        cx = w * 0.5;
+        cy = h * 0.5;
+    }
+
+    function drawStars() {
+        for (const s of stars) {
+            s.z -= 0.0026 * (1 + speed);
+            if (s.z <= 0.02) s.z = 1;
+            const p = 1 / s.z;
+            const x = cx + (s.x + mx * 0.08) * w * 0.42 * p;
+            const y = cy + (s.y + my * 0.08) * h * 0.38 * p;
+            if (x < -20 || x > w + 20 || y < -20 || y > h + 20) {
+                s.z = 1;
+                continue;
+            }
+            const r = Math.max(0.4, Math.min(3.6, p * (isMobile ? 1.1 : 1.35)));
+            ctx.globalAlpha = Math.min(0.85, 0.18 + p * 0.42);
+            ctx.fillStyle = s.c;
+            ctx.beginPath();
+            ctx.arc(x, y, r, 0, Math.PI * 2);
+            ctx.fill();
+        }
+        ctx.globalAlpha = 1;
+    }
+
+    function drawTunnel() {
+        const leftBias = -w * 0.11;
+        for (let i = 0; i < tunnelCount; i++) {
+            const z = ((i / tunnelCount) + (t * 0.045)) % 1;
+            const p = 1.0 - z;
+            const radius = (isMobile ? 58 : 82) + p * (isMobile ? 240 : 360);
+            const x = cx + leftBias + mx * 24 * p;
+            const y = cy + my * 16 * p;
+            const alpha = (0.04 + p * 0.2) * (reduceMotion ? 0.7 : 1);
+            const hueA = 285 + (variant * 11 + i * 3) % 36;
+            const hueB = 198 + (variant * 7 + i * 4) % 26;
+
+            ctx.lineWidth = 1 + p * 1.5;
+            ctx.globalAlpha = alpha;
+            ctx.strokeStyle = `hsla(${hueA}, 95%, 65%, 1)`;
+            ctx.beginPath();
+            ctx.ellipse(x, y, radius, radius * 0.62, t * 0.36 + i * 0.08, 0, Math.PI * 2);
+            ctx.stroke();
+
+            ctx.globalAlpha = alpha * 0.85;
+            ctx.strokeStyle = `hsla(${hueB}, 92%, 65%, 1)`;
+            ctx.beginPath();
+            ctx.ellipse(x, y, radius * 0.72, radius * 0.45, -t * 0.28 - i * 0.06, 0, Math.PI * 2);
+            ctx.stroke();
+        }
+        ctx.globalAlpha = 1;
+    }
+
+    function drawOrbitCore() {
+        const baseX = cx - w * 0.18 + Math.sin(t * 0.42) * 14;
+        const baseY = cy - h * 0.02 + Math.cos(t * 0.36) * 10;
+
+        // Glowing center
+        const g = ctx.createRadialGradient(baseX, baseY, 6, baseX, baseY, isMobile ? 80 : 110);
+        g.addColorStop(0, 'rgba(255, 78, 205, 0.5)');
+        g.addColorStop(0.45, 'rgba(80, 35, 150, 0.24)');
+        g.addColorStop(1, 'rgba(0, 0, 0, 0)');
+        ctx.fillStyle = g;
+        ctx.beginPath();
+        ctx.arc(baseX, baseY, isMobile ? 86 : 116, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Orbit rings
+        for (let i = 0; i < 3; i++) {
+            const r = (isMobile ? 62 : 94) + i * (isMobile ? 20 : 28);
+            ctx.lineWidth = 1.1 + i * 0.2;
+            ctx.globalAlpha = 0.22 - i * 0.04;
+            ctx.strokeStyle = i % 2 === 0 ? '#ff4ecd' : '#22d3ee';
+            ctx.beginPath();
+            ctx.ellipse(baseX, baseY, r, r * (0.56 + i * 0.06), t * (0.5 - i * 0.12), 0, Math.PI * 2);
+            ctx.stroke();
+        }
+        ctx.globalAlpha = 1;
+    }
 
     window.addEventListener(
         'pointermove',
@@ -126,51 +134,20 @@ export function initParticleBackground({ canvasId, variant = 0, fullPage = false
         { passive: true }
     );
 
-    function resize() {
-        const w = fullPage ? window.innerWidth : canvas.clientWidth;
-        const h = fullPage ? window.innerHeight : canvas.clientHeight;
-        if (w === 0 || h === 0) return;
-        renderer.setSize(w, h, false);
-        camera.aspect = w / h;
-        camera.updateProjectionMatrix();
-    }
-
     window.addEventListener('resize', resize);
-    if (window.visualViewport) {
-        window.visualViewport.addEventListener('resize', resize);
-    }
-
-    let running = true;
+    if (window.visualViewport) window.visualViewport.addEventListener('resize', resize);
     document.addEventListener('visibilitychange', () => {
         running = !document.hidden;
     });
 
     function tick() {
         requestAnimationFrame(tick);
-        if (!running) return;
-
-        t += 0.0042 * speed;
-        points.rotation.y = t * (0.36 + variant * 0.02);
-        points.rotation.x = Math.sin(t * 0.21) * 0.11;
-        points.rotation.z = Math.sin(t * 0.08 + variant) * 0.04;
-
-        knot.rotation.x = t * 0.52;
-        knot.rotation.y = t * 0.4;
-        knot.rotation.z = t * 0.12;
-        knot.material.opacity = 0.1 + Math.sin(t * 1.15 + variant) * 0.045;
-
-        inner.rotation.y = -t * 0.46;
-        inner.rotation.x = t * 0.26;
-        inner.material.opacity = 0.08 + Math.sin(t * 0.85 + variant * 0.5) * 0.035;
-
-        mat.opacity = 0.78 + Math.sin(t * 0.6) * 0.12;
-
-        const parallax = reduceMotion ? 0 : fullPage ? 4.2 : 3.2;
-        camera.position.x = mx * parallax;
-        camera.position.y = my * (reduceMotion ? 0 : -2.1);
-        camera.lookAt(0, 0, 0);
-
-        renderer.render(scene, camera);
+        if (!running || !w || !h) return;
+        t += 0.016 * speed;
+        ctx.clearRect(0, 0, w, h);
+        drawStars();
+        drawTunnel();
+        drawOrbitCore();
     }
 
     resize();
