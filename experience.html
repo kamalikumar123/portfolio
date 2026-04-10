@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience - Kamali Kumar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/subpage.css">
+</head>
+<body>
+    <canvas id="page-particles" class="page-particles" aria-hidden="true"></canvas>
+
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">Kamali Kumar</a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="experience.html" class="nav-link active">Experience</a></li>
+                    <li><a href="education.html" class="nav-link">Education</a></li>
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                </ul>
+                <div class="mobile-menu" aria-label="Menu"><span></span><span></span><span></span></div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="section-title">Experience</h1>
+            <p class="section-subtitle">Professional journey and impact across development and training roles</p>
+            <div class="cards">
+                <div class="card fade-in">
+                    <div class="role">Java & Spring Boot Developer</div>
+                    <div class="company">D2RAILABS</div>
+                    <div class="date">June 2025 - Nov 2025</div>
+                    <p>Previously served as a Developer at D2RAILABS, specializing in Core Java, Spring Boot, REST APIs, and Microservices. Designed and implemented scalable backend systems, integrated APIs for seamless client operations, and optimized database performance using Hibernate/JPA.</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="role">Technical Trainer & Knowledge Transfer Specialist</div>
+                    <div class="company">Freelance</div>
+                    <div class="date">2023 - 2025</div>
+                    <p>Successfully trained over 2000+ students across 19+ colleges in C, Java, and Python. Developed practical curricula and conducted hands-on workshops focused on industry readiness.</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="role">Software Engineering Intern</div>
+                    <div class="company">Virtusa Consulting Services Pvt. Ltd.</div>
+                    <div class="date">February 2023 - May 2023</div>
+                    <p>Worked with project delivery and agile workflows, including Power BI and Power Automate use cases, ticket handling, and collaborative implementation support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="https://leetcode.com/u/kamali1212/" target="_blank" rel="noopener noreferrer"><i class="fas fa-code"></i></a>
+                <a href="https://www.instagram.com/_kamaliii._/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/kamali-kumar2622/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p>&copy; 2024 Kamali Kumar. All rights reserved. Crafted with ❤️ for education and innovation.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navMenu = document.querySelector('.nav-menu');
+        if (mobileMenu && navMenu) {
+            mobileMenu.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
+
+        const header = document.querySelector('.header');
+        window.addEventListener('scroll', () => {
+            header.style.background = window.scrollY > 100 ? 'rgba(8, 4, 22, 0.94)' : 'rgba(11, 6, 28, 0.78)';
+        });
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                });
+            },
+            { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+        );
+        document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+    </script>
+    <script type="module">
+        import { initParticleBackground } from new URL('./js/page-particles.mjs', import.meta.url);
+        initParticleBackground({ canvasId: 'page-particles', variant: 1, fullPage: true });
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Kamali Kumar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/subpage.css">
+</head>
+<body>
+    <canvas id="page-particles" class="page-particles" aria-hidden="true"></canvas>
+
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">Kamali Kumar</a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="experience.html" class="nav-link">Experience</a></li>
+                    <li><a href="education.html" class="nav-link">Education</a></li>
+                    <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                </ul>
+                <div class="mobile-menu" aria-label="Menu"><span></span><span></span><span></span></div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="section-title">Projects</h1>
+            <p class="section-subtitle">Selected work showcasing backend engineering and problem solving</p>
+            <div class="cards">
+                <div class="card fade-in">
+                    <div class="title">Production E-Commerce Backend (Turtle)</div>
+                    <div class="tech">D2RaiLabs, Chennai | Java, Spring Boot, AWS</div>
+                    <div class="project-visual">
+                        <img src="ecommerce-turtle-project.png" alt="E-commerce Turtle project — modern web development showcase" width="1200" height="675" loading="lazy">
+                    </div>
+                    <p>Built backend infrastructure serving 10,000+ users and daily API traffic. Developed 20+ REST APIs, secured access with Spring Security and OAuth 2.0, and improved MySQL response time by 35%.</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="title">Online Feedback Form</div>
+                    <div class="tech">HTML, CSS, PHP</div>
+                    <div class="project-visual">
+                        <img src="online-feedback-form.png" alt="Why feedback matters — infographic for the online feedback form project" width="1200" height="675" loading="lazy">
+                    </div>
+                    <p>Built a full-stack feedback system with dynamic form generation, admin dashboard, and secure login flow.</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="title">Mobility Aware & Delay Sensitive Service Provisioning in Mobile Edge Cloud Networks</div>
+                    <div class="tech">Java, NetBeans</div>
+                    <div class="project-visual">
+                        <img src="mobility-aware-project.png" alt="Mobility-aware mobile edge cloud network architecture — edge servers, IoT devices, and cloud collaboration" width="1200" height="675" loading="lazy">
+                    </div>
+                    <p>Implemented GUI-driven simulation and document handling logic focused on low-delay communication in mobile edge cloud scenarios.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="https://leetcode.com/u/kamali1212/" target="_blank" rel="noopener noreferrer"><i class="fas fa-code"></i></a>
+                <a href="https://www.instagram.com/_kamaliii._/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/kamali-kumar2622/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p>&copy; 2026 Kamali Kumar. All rights reserved. Crafted with ❤️ for education and innovation.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navMenu = document.querySelector('.nav-menu');
+        if (mobileMenu && navMenu) {
+            mobileMenu.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
+
+        const header = document.querySelector('.header');
+        window.addEventListener('scroll', () => {
+            header.style.background = window.scrollY > 100 ? 'rgba(8, 4, 22, 0.94)' : 'rgba(11, 6, 28, 0.78)';
+        });
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                });
+            },
+            { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+        );
+        document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+    </script>
+    <script type="module">
+        import { initParticleBackground } from new URL('./js/page-particles.mjs', import.meta.url);
+        initParticleBackground({ canvasId: 'page-particles', variant: 3, fullPage: true });
+    </script>
+</body>
+</html>
