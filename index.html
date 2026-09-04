@@ -1514,7 +1514,7 @@ Previously, I worked as a Developer at D2RAILABS, contributing to real-time appl
                     </div>
                     
                     <div class="hero-buttons">
-                        <a href="Kamali_Kumar_Resume.pdf" class="btn" download="Kamali_Kumar_Resume.pdf">
+                        <a href="Kamali_Kumar_Resume.pdf" id="resume-download" class="btn" download="Kamali_Kumar_Resume.pdf">
                             <i class="fas fa-download"></i>
                             Download Resume
                         </a>
@@ -2072,6 +2072,20 @@ Previously, I worked as a Developer at D2RAILABS, contributing to real-time appl
     </footer>
 
     <script>
+        document.getElementById('resume-download')?.addEventListener('click', async (event) => {
+            event.preventDefault();
+            const response = await fetch('Kamali_Kumar_Resume.pdf');
+            const resumeBlob = await response.blob();
+            const downloadUrl = URL.createObjectURL(resumeBlob);
+            const downloadLink = document.createElement('a');
+            downloadLink.href = downloadUrl;
+            downloadLink.download = 'Kamali_Kumar_Resume.pdf';
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            downloadLink.remove();
+            URL.revokeObjectURL(downloadUrl);
+        });
+
         // Sample data for certificates and colleges
         const certificates = [
             {
