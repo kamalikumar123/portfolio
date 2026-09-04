@@ -470,6 +470,7 @@
             display: flex;
             gap: 2rem;
             margin-top: 3rem;
+            flex-wrap: wrap;
         }
 
         .hero-image {
@@ -494,9 +495,9 @@
 
         .about-content {
             display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 6rem;
-            align-items: center;
+            grid-template-columns: minmax(0, 1fr);
+            max-width: 90rem;
+            margin: 0 auto;
         }
 
         .about-image {
@@ -549,6 +550,7 @@
             margin-bottom: 2rem;
             text-align: left;
             letter-spacing: 0.3px;
+            overflow-wrap: anywhere;
         }
 
         .stats-grid {
@@ -1508,7 +1510,7 @@ Previously, I worked as a Developer at D2RAILABS, contributing to real-time appl
                     </div>
                     
                     <div class="hero-buttons">
-                        <a href="https://kamalikumar123.github.io/portfolio/Kamali_Kumar_Backend_Java_Developer.pdf" class="btn" target="_blank">
+                        <a href="Kamali_Kumar_Backend_Java_Developer.pdf" class="btn" download="Kamali_Kumar_Backend_Java_Developer.pdf">
                             <i class="fas fa-download"></i>
                             Download Resume
                         </a>
