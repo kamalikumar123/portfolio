@@ -7,6 +7,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/subpage.css">
+    <style>
+        .metric-chips { display:flex; flex-wrap:wrap; gap:.8rem; margin:1.4rem 0; }
+        .metric-chips span { padding:.35em 1em; font-size:.85em; font-weight:600; color:#C4B5FD; border:1px solid rgba(196,181,253,.35); background:rgba(139,92,246,.14); border-radius:999px; }
+        .live-badge { display:inline-flex; align-items:center; gap:.4em; margin-left:.6em; padding:.15em .7em; font-size:.6em; font-weight:600; letter-spacing:.06em; text-transform:uppercase; vertical-align:middle; color:#34D399; border:1px solid rgba(52,211,153,.5); background:rgba(52,211,153,.12); border-radius:999px; }
+        .live-badge i { font-size:.55em; animation: livePulse 1.6s ease-in-out infinite; }
+        @keyframes livePulse { 50% { opacity:.3; } }
+    </style>
+    <link rel="stylesheet" href="css/theme-light.css">
+    <script src="js/theme.js"></script>
 </head>
 <body>
     <canvas id="page-particles" class="page-particles" aria-hidden="true"></canvas>
@@ -14,12 +23,16 @@
     <header class="header">
         <div class="container">
             <nav class="navbar">
-                <a href="index.html" class="logo">Kamali Kumar</a>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#skills" class="nav-link">Skills</a></li>
                     <li><a href="experience.html" class="nav-link">Experience</a></li>
                     <li><a href="education.html" class="nav-link">Education</a></li>
                     <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                    <li><a href="index.html#certificates" class="nav-link">Certificates</a></li>
+                    <li><a href="index.html#colleges" class="nav-link">Colleges</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
                 </ul>
                 <div class="mobile-menu" aria-label="Menu"><span></span><span></span><span></span></div>
             </nav>
@@ -32,8 +45,94 @@
             <p class="section-subtitle">Selected work showcasing backend engineering and problem solving</p>
             <div class="cards">
                 <div class="card fade-in">
+                    <div class="title">Elsevier Books – End-to-End Production Management Platform <span class="live-badge"><i class="fas fa-circle"></i> Live</span></div>
+                    <div class="tech">Thomson Digital | Java, Spring Boot, REST APIs, HTML, CSS, JavaScript, XML, MySQL</div>
+                    <div class="project-visual">
+                        <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Library of books representing the Elsevier book production platform" width="1200" height="675" loading="lazy">
+                    </div>
+                    <div class="metric-chips"><span>2-day turnaround</span><span>4 dashboards</span><span>Live</span></div>
+                    <ul class="exp-points">
+                        <li>Developed frontend and backend components for an Elsevier book production platform with integrated dashboards for book allocation, quality control, assistant editor (AS/CE) workflows, and graphics processing.</li>
+                        <li>Streamlined book production, tracked workflow progress, and managed graphics-processing bottlenecks to support delivery within a 2-day turnaround time.</li>
+                        <li><strong>Customer Dashboard:</strong> manage allocated books and monitor production status.</li>
+                        <li><strong>QC Dashboard:</strong> track quality checks and support output validation.</li>
+                        <li><strong>AS/CE Dashboard:</strong> manage editorial workflows and book-processing progress.</li>
+                        <li><strong>Graphics Dashboard:</strong> monitor graphics processing, identify bottlenecks, and track resolution status.</li>
+                        <li>Developed and integrated dashboard functionality and backend workflows across frontend and backend.</li>
+                        <li>Improved visibility across production stages to support timely book delivery.</li>
+                    </ul>
+                </div>
+                <div class="card fade-in">
+                    <div class="title">60-Minute Delivery Automation Platform – Elsevier <span class="live-badge"><i class="fas fa-circle"></i> Live</span></div>
+                    <div class="tech">Thomson Digital | Full-Stack Development, File Processing, Workflow Automation</div>
+                    <div class="project-visual">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Dashboard representing the 60-minute delivery automation platform" width="1200" height="675" loading="lazy">
+                    </div>
+                    <div class="metric-chips"><span>60-minute delivery</span><span>End-to-end automation</span><span>Live</span></div>
+                    <ul class="exp-points">
+                        <li>Developed a full-stack application for a 60-minute delivery workflow, handling end-to-end file processing.</li>
+                        <li>Covered graphics and image correction, document conversion, and related production activities.</li>
+                        <li>Worked on both frontend and backend development to streamline the workflow and improve processing efficiency.</li>
+                    </ul>
+                </div>
+                <div class="card fade-in">
+                    <div class="title">Unitouch 2.0 – Customer and Admin Dashboard <span class="live-badge"><i class="fas fa-circle"></i> Live</span></div>
+                    <div class="tech">Thomson Digital | Full-Stack Development, FTP Integration, Workflow Automation</div>
+                    <div class="project-visual">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Analytics dashboard representing Unitouch 2.0" width="1200" height="675" loading="lazy">
+                    </div>
+                    <div class="metric-chips"><span>FTP auto-allocation</span><span>Zero manual allocation</span><span>Customer + Admin dashboards</span></div>
+                    <ul class="exp-points">
+                        <li>Developed the customer and admin dashboards for Unitouch 2.0.</li>
+                        <li>Implemented an automated file-processing workflow: files are retrieved directly from the FTP server and allocated for processing without manual intervention.</li>
+                        <li>Worked on both frontend and backend development to improve automation and operational efficiency.</li>
+                    </ul>
+                </div>
+                <div class="card fade-in">
+                    <div class="title">UniPM – Integrated Production Management Platform <span class="live-badge"><i class="fas fa-circle"></i> Live</span></div>
+                    <div class="tech">Thomson Digital | Tool Integration, UI Design, Production Management</div>
+                    <div class="project-visual">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Team working together representing the UniPM platform" width="1200" height="675" loading="lazy">
+                    </div>
+                    <div class="metric-chips"><span>Multi-tool integration</span><span>Single access point</span><span>Live</span></div>
+                    <ul class="exp-points">
+                        <li>Enhanced the existing UniPM platform by integrating multiple tools required for Elsevier client workflows into a unified system.</li>
+                        <li>Designed and developed the user interface to provide centralized access to the integrated tools.</li>
+                        <li>Simplified production operations through a single point of access.</li>
+                    </ul>
+                </div>
+                <div class="card fade-in">
+                    <div class="title">Live File Conversion and Processing System <span class="live-badge"><i class="fas fa-circle"></i> Live</span></div>
+                    <div class="tech">Thomson Digital | File Conversion, Production Workflow</div>
+                    <div class="project-visual">
+                        <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Data processing representing live file conversion" width="1200" height="675" loading="lazy">
+                    </div>
+                    <div class="metric-chips"><span>Live production</span><span>Automated file flow</span></div>
+                    <ul class="exp-points">
+                        <li>Worked on the file conversion workflow to support live production processing.</li>
+                        <li>Integrated and improved the conversion process to handle incoming files.</li>
+                        <li>Ensured files move through the production workflow efficiently.</li>
+                    </ul>
+                </div>
+                <div class="card fade-in">
+                    <div class="title">UniSec – Centralized Conversion Platform <span class="live-badge"><i class="fas fa-circle"></i> Live</span></div>
+                    <div class="tech">Thomson Digital | Elsevier | File Conversion, Team Collaboration</div>
+                    <div class="project-visual">
+                        <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Analytics workspace representing the UniSec conversion platform" width="1200" height="675" loading="lazy">
+                    </div>
+                    <div class="metric-chips"><span>Multi-user access</span><span>Team-wide conversions</span><span>Live</span></div>
+                    <ul class="exp-points">
+                        <li>Worked on UniSec, a conversion platform for the Elsevier client.</li>
+                        <li>Designed to let multiple team members access and perform file conversions.</li>
+                        <li>Simplified conversion operations and made the workflow accessible to the wider team.</li>
+                    </ul>
+                </div>
+                <div class="card fade-in">
                     <div class="title">Production E-Commerce Backend (Turtle)</div>
                     <div class="tech">D2RaiLabs, Chennai | Java, Spring Boot, AWS</div>
+                    <div class="project-visual">
+                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Online payment representing the e-commerce Turtle backend" width="1200" height="675" loading="lazy">
+                    </div>
                     <ul class="exp-points">
                         <li>Built and deployed scalable backend infrastructure serving 10000+ users and 10,000+ daily API requests.</li>
                         <li>Developed 20+ REST APIs secured with Spring Security and OAuth 2.0.</li>
@@ -44,6 +143,9 @@
                 <div class="card fade-in">
                     <div class="title">Online Feedback Form</div>
                     <div class="tech">HTML, CSS, PHP</div>
+                    <div class="project-visual">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Hand filling out a form representing the online feedback form" width="1200" height="675" loading="lazy">
+                    </div>
                     <ul class="exp-points">
                         <li>Built a full-stack feedback platform with dynamic form generation and secure login flow.</li>
                         <li>Implemented admin dashboard features for monitoring responses and managing submissions.</li>
@@ -53,6 +155,9 @@
                 <div class="card fade-in">
                     <div class="title">Mobility Aware & Delay Sensitive Service Provisioning in Mobile Edge Cloud Networks</div>
                     <div class="tech">Java, NetBeans</div>
+                    <div class="project-visual">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Connected global network representing mobile edge cloud networks" width="1200" height="675" loading="lazy">
+                    </div>
                     <ul class="exp-points">
                         <li>Developed GUI-based simulation modules for mobility-aware and delay-sensitive provisioning.</li>
                         <li>Implemented Java logic for document handling and service routing in edge-cloud scenarios.</li>
@@ -63,7 +168,7 @@
                     <div class="title">XML-to-XML Content Conversion</div>
                     <div class="tech">Thomson Digital | XML Processing, XSLT, Validation</div>
                     <div class="project-visual">
-                        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Code editor representing XML content conversion" width="1200" height="675" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Code editor representing XML content conversion" width="1200" height="675" loading="lazy">
                     </div>
                     <ul class="exp-points">
                         <li>Designed and implemented automated XML-to-XML conversion workflows for content transformation.</li>
@@ -77,7 +182,7 @@
                     <div class="title">BITS-to-XML Conversion System</div>
                     <div class="tech">Thomson Digital | BITS Standards, XML Schema, Content Mapping</div>
                     <div class="project-visual">
-                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Server infrastructure representing BITS-to-XML processing" width="1200" height="675" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Network infrastructure representing BITS-to-XML processing" width="1200" height="675" loading="lazy">
                     </div>
                     <ul class="exp-points">
                         <li>Developed automated conversion pipeline from BITS (Book Interchange Tag Suite) to standard XML format.</li>
@@ -91,7 +196,7 @@
                     <div class="title">PDF-to-XML Content Extraction</div>
                     <div class="tech">Thomson Digital | PDF Parsing, OCR Integration, Content Extraction</div>
                     <div class="project-visual">
-                        <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Document workspace representing PDF-to-XML extraction" width="1200" height="675" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1618044733300-9472054094ee?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Printed documents representing PDF-to-XML extraction" width="1200" height="675" loading="lazy">
                     </div>
                     <ul class="exp-points">
                         <li>Engineered PDF-to-XML conversion system extracting structured content from unstructured PDF files.</li>
@@ -105,7 +210,7 @@
                     <div class="title">EPUB-to-XML Digital Book Conversion</div>
                     <div class="tech">Thomson Digital | EPUB Parsing, Book Standards, XML Markup</div>
                     <div class="project-visual">
-                        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Books representing EPUB-to-XML conversion" width="1200" height="675" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Stack of books representing EPUB-to-XML conversion" width="1200" height="675" loading="lazy">
                     </div>
                     <ul class="exp-points">
                         <li>Created automated conversion pipeline transforming EPUB digital books to standardized XML format.</li>
@@ -120,7 +225,7 @@
                     <div class="title">UNIPM - Universal Project Management Application</div>
                     <div class="tech">Thomson Digital | Project Management, Workflow Automation, Content Operations</div>
                     <div class="project-visual">
-                        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Project team planning workflow for the UNIPM application" width="1200" height="675" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Workflow planning board representing the UNIPM application" width="1200" height="675" loading="lazy">
                     </div>
                     <ul class="exp-points">
                         <li>Developed UNIPM as a project-management application for planning, tracking, and coordinating publishing projects.</li>

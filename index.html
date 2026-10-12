@@ -459,6 +459,143 @@
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
         }
 
+        .live-badge { display:inline-flex; align-items:center; gap:.4em; margin-left:.6em; padding:.15em .7em; font-size:.55em; font-weight:600; letter-spacing:.06em; text-transform:uppercase; vertical-align:middle; color:#34D399; border:1px solid rgba(52,211,153,.5); background:rgba(52,211,153,.12); border-radius:999px; -webkit-text-fill-color:#34D399; }
+        .live-badge i { font-size:.55em; animation: livePulse 1.6s ease-in-out infinite; }
+        @keyframes livePulse { 50% { opacity:.3; } }
+
+
+        .recognition-callout {
+            display: flex;
+            align-items: center;
+            gap: 1.4rem;
+            margin: 0 0 3rem;
+            padding: 1.4rem 1.8rem;
+            font-size: 1.5rem;
+            line-height: 1.6;
+            text-align: left;
+            background: rgba(139, 92, 246, 0.14);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent-cyan);
+            border-radius: 1.2rem;
+        }
+
+        .recognition-callout i {
+            flex: 0 0 auto;
+            font-size: 2.2rem;
+            color: #F9A8D4;
+        }
+
+        .recognition-callout strong {
+            color: #C4B5FD;
+            font-weight: 600;
+        }
+
+        .metric-chips { display:flex; flex-wrap:wrap; gap:.8rem; margin:1.4rem 0; }
+        .metric-chips span { padding:.35em 1em; font-size:1.2rem; font-weight:600; color:#C4B5FD; border:1px solid rgba(196,181,253,.35); background:rgba(139,92,246,.14); border-radius:999px; }
+
+        .open-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin: 0 0 2rem;
+            padding: 0.6rem 1.4rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #34D399;
+            border: 1px solid rgba(52, 211, 153, 0.5);
+            background: rgba(52, 211, 153, 0.12);
+            border-radius: 999px;
+        }
+
+        .open-badge i {
+            font-size: 0.8rem;
+            animation: livePulse 1.6s ease-in-out infinite;
+        }
+
+        .leader-title {
+            font-size: 1.8rem;
+            margin: 2.4rem 0 1.4rem;
+            color: #C4B5FD;
+            text-align: left;
+        }
+
+        .leader-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+            gap: 1.4rem;
+            margin-bottom: 3rem;
+        }
+
+        .leader-card {
+            padding: 1.6rem;
+            text-align: left;
+            background: var(--surface-glass);
+            border: 1px solid var(--border);
+            border-top: 3px solid var(--accent-cyan);
+            border-radius: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .leader-card:hover { transform: translateY(-4px); }
+
+        .leader-card i { font-size: 2.2rem; color: #F9A8D4; }
+
+        .leader-card h4 { margin: 1rem 0 0.4rem; font-size: 1.6rem; }
+
+        .leader-card p { font-size: 1.3rem; opacity: 0.85; line-height: 1.5; }
+
+        .skill-group-title {
+            font-size: 2rem;
+            margin: 3rem 0 1.4rem;
+            color: #C4B5FD;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.6rem;
+        }
+
+        .tech-strip {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2.4rem;
+            padding: 2.4rem 1.6rem;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            background: var(--surface-glass);
+            position: relative;
+            z-index: 2;
+        }
+
+        .tech-item { text-align: center; min-width: 8rem; }
+
+        .tech-item i {
+            font-size: 3.6rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tech-item span { display: block; margin-top: 0.6rem; font-size: 1.3rem; opacity: 0.9; }
+
+        .how-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+            gap: 2rem;
+        }
+
+        .how-card {
+            padding: 2rem;
+            background: var(--surface-glass);
+            border: 1px solid var(--border);
+            border-top: 3px solid var(--accent-cyan);
+            border-radius: 1.2rem;
+        }
+
+        .how-card i { font-size: 2.4rem; color: #F9A8D4; }
+        .how-card h3 { margin: 1rem 0 0.6rem; font-size: 1.8rem; }
+        .how-card p { font-size: 1.4rem; opacity: 0.85; line-height: 1.6; }
+
         .typing-text {
             border-right: 2px solid var(--accent-cyan);
             white-space: nowrap;
@@ -476,6 +613,10 @@
         .hero-image {
             text-align: center;
             animation: fadeInRight 1s ease 0.4s both;
+        }
+
+        @media (min-width: 1025px) {
+            .hero-image { margin-top: -14rem; }
         }
 
         .hero-image .profile-img {
@@ -1420,6 +1561,8 @@
 
 }
     </style>
+    <link rel="stylesheet" href="css/theme-light.css">
+    <script src="js/theme.js"></script>
 </head>
 <body>
     <canvas id="page-particles" class="page-particles" aria-hidden="true"></canvas>
@@ -1427,7 +1570,6 @@
     <header class="header">
         <div class="container">
             <nav class="navbar">
-                <a href="#home" class="logo">Kamali Kumar</a>
                 <ul class="nav-menu">
                     <li><a href="#home" class="nav-link active">Home</a></li>
                     <li><a href="#about" class="nav-link">About</a></li>
@@ -1453,17 +1595,17 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <div class="greeting">Hi there! 👋</div>
                     <h1>I'm <span class="typing-text">Kamali Kumar</span></h1>
-                    <div class="subtitle">Java Full Stack Developer & Technical Trainer</div>
+                    <div class="subtitle">Java Full Stack Developer | Spring Boot | REST APIs | Frontend &amp; Backend Automation | CI/CD</div>
+                    <div class="open-badge"><i class="fas fa-circle"></i> Open to Java Full Stack &amp; Tech Lead opportunities</div>
                     <p class="description">
-Previously worked as a Java Spring Boot Developer, specializing in building RESTful APIs, implementing JUnit testing, and managing CI/CD pipelines using Git and Jenkins. Played a key role in ensuring application quality, continuous integration, and smooth deployment processes.
-
-Prior to this, served as a Technical Trainer, where I successfully trained 2000+ aspiring programmers across various prestigious institutions, combining strong technical expertise with innovative and student-centric teaching methodologies to deliver impactful learning outcomes.                    </p>
+Java Full Stack Developer specializing in Java, Spring Boot, RESTful APIs, frontend and backend development, and CI/CD pipelines using Git and Jenkins. I take complete ownership of a product, from the user interface to backend services, integrations, and deployment. I built an entire Elsevier production platform end to end, including customer, QC, editorial, and graphics dashboards, automated file allocation, and document conversion, and took it live within 2 days. I deliver reliable, JUnit-tested applications and support them in live production.
+                    </p>
+                    <div class="recognition-callout"><i class="fas fa-award"></i><span><strong>Recognised with a salary increment within just 6 months of joining</strong> in recognition of performance, ownership, and delivery quality.</span></div>
                     <div class="hero-buttons">
-                        <a href="#about" class="btn">
-                            <i class="fas fa-user"></i>
-                            Itz Me
+                        <a href="Kamali_Kumar_Resume.pdf" id="resume-download" class="btn" download="Kamali_Kumar_Resume.pdf">
+                            <i class="fas fa-download"></i>
+                            Download Resume
                         </a>
                         <a href="#contact" class="btn btn-secondary">
                             <i class="fas fa-envelope"></i>
@@ -1478,6 +1620,18 @@ Prior to this, served as a Technical Trainer, where I successfully trained 2000+
         </div>
     </section>
 
+    <div class="tech-strip" aria-label="Tech stack">
+        <div class="tech-item"><i class="fab fa-java"></i><span>Java</span></div>
+        <div class="tech-item"><i class="fas fa-cogs"></i><span>Spring Boot</span></div>
+        <div class="tech-item"><i class="fas fa-database"></i><span>MySQL</span></div>
+        <div class="tech-item"><i class="fas fa-tools"></i><span>Jenkins</span></div>
+        <div class="tech-item"><i class="fab fa-git-alt"></i><span>Git</span></div>
+        <div class="tech-item"><i class="fab fa-aws"></i><span>AWS</span></div>
+        <div class="tech-item"><i class="fab fa-js"></i><span>JavaScript</span></div>
+        <div class="tech-item"><i class="fab fa-html5"></i><span>HTML</span></div>
+        <div class="tech-item"><i class="fab fa-css3-alt"></i><span>CSS</span></div>
+    </div>
+
     <!-- About Section -->
     <section id="about" class="about section">
         <div class="container">
@@ -1488,12 +1642,37 @@ Prior to this, served as a Technical Trainer, where I successfully trained 2000+
             
             <div class="about-content">
                 <div class="about-text fade-in">
-                    <h3>Kamali Kumar</h3>
                     <p style="text-align: left;">
-As a Team Lead at Thomson Digital, I lead content conversion and publishing workflows, including XML-to-XML, BITS-to-XML, PDF-to-XML, and EPUB-to-XML processing. I developed and maintained the UNIPM application for automated file conversion and staging workflows, helping teams manage large-scale publishing operations with greater accuracy and efficiency.
+As a Team Lead at Thomson Digital, I am currently responsible for multiple Elsevier projects at the same time, taking ownership from planning and development to live delivery. I lead the team across content conversion and publishing workflows, including XML-to-XML, BITS-to-XML, PDF-to-XML, and EPUB-to-XML processing, while also building the platforms that power them: the Elsevier Books production platform, the 60-Minute Delivery workflow, Unitouch 2.0, UniPM, UniSec, and the live file conversion system.
 
-Previously, I worked as a Developer at D2RAILABS, contributing to real-time application development and delivery. I am also an experienced freelance technical trainer who enjoys teaching programming skills to students across various colleges. My professional journey is driven by technical leadership, continuous learning, and creating a positive and impactful learning environment.                </p>
+I also take part in hiring for the team, interviewing and selecting Java developers and building a group that can handle multiple workstreams in parallel. I work across the full stack, from dashboards and user interfaces to backend services, automated file allocation, and integrations, and I am accountable for keeping every project accurate, on schedule, and running smoothly in production. Being recognised with an increment within six months of joining reflects the ownership and delivery quality I bring to each one.
+
+Before this, I worked as a Java Spring Boot Developer at D2RAILABS and as a freelance technical trainer, teaching 2000+ students across 19+ colleges. That blend of hands-on engineering and mentoring shapes how I lead today: clear communication, continuous learning, and a team that delivers reliably under pressure.                </p>
                                         
+                    <h4 class="leader-title">Leadership</h4>
+                    <div class="leader-grid">
+                        <div class="leader-card">
+                            <i class="fas fa-users"></i>
+                            <h4>Team Lead</h4>
+                            <p>Leading the Chennai branch team at Thomson Digital</p>
+                        </div>
+                        <div class="leader-card">
+                            <i class="fas fa-layer-group"></i>
+                            <h4>Multiple Projects</h4>
+                            <p>Owning several Elsevier platforms in parallel</p>
+                        </div>
+                        <div class="leader-card">
+                            <i class="fas fa-user-check"></i>
+                            <h4>Hiring</h4>
+                            <p>Interviewing and selecting Java developers</p>
+                        </div>
+                        <div class="leader-card">
+                            <i class="fas fa-award"></i>
+                            <h4>Recognised</h4>
+                            <p>Increment within 6 months of joining</p>
+                        </div>
+                    </div>
+
                     <div class="stats-grid">
                         <div class="stat-card">
                             <span class="number">2000+</span>
@@ -1514,14 +1693,6 @@ Previously, I worked as a Developer at D2RAILABS, contributing to real-time appl
                     </div>
                     
                     <div class="hero-buttons">
-                        <a href="Kamali_Kumar_Resume.pdf" id="resume-download" class="btn" download="Kamali_Kumar_Resume.pdf">
-                            <i class="fas fa-download"></i>
-                            Download Resume
-                        </a>
-                        <a href="https://kamalikumar123.github.io/portfolio/Kamali_Kumar_Resume.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-                            <i class="fas fa-file-pdf"></i>
-                            View Resume PDF
-                        </a>
             <a href="https://kamalikumar123.github.io/portfolio/Experienceletter.pdf" 
           class="btn btn-secondary" 
            target="_blank">
@@ -1535,6 +1706,36 @@ Previously, I worked as a Developer at D2RAILABS, contributing to real-time appl
     </section>
 
     <!-- Skills Section -->
+    <!-- How I Work Section -->
+    <section id="how-i-work" class="section">
+        <div class="container">
+            <h2 class="section-title">How I Work</h2>
+            <p class="section-subtitle">The principles I bring to every project and every team</p>
+            <div class="how-grid">
+                <div class="how-card fade-in">
+                    <i class="fas fa-flag"></i>
+                    <h3>Ownership</h3>
+                    <p>I take a product from idea to live: frontend, backend and deployment.</p>
+                </div>
+                <div class="how-card fade-in">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Quick Delivery</h3>
+                    <p>Entire platforms built and taken live within days, not months.</p>
+                </div>
+                <div class="how-card fade-in">
+                    <i class="fas fa-people-group"></i>
+                    <h3>Mentoring</h3>
+                    <p>Training 2000+ learners taught me to explain clearly and grow people.</p>
+                </div>
+                <div class="how-card fade-in">
+                    <i class="fas fa-circle-check"></i>
+                    <h3>Quality</h3>
+                    <p>JUnit testing, CI/CD and validation keep production reliable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="skills" class="section">
         <div class="container">
             <h2 class="section-title">Technical Skills</h2>
@@ -1542,67 +1743,84 @@ Previously, I worked as a Developer at D2RAILABS, contributing to real-time appl
                 Expertise across multiple programming languages and modern development technologies
             </p>
             
+            <h3 class="skill-group-title">Backend</h3>
             <div class="skills-grid">
-                <div class="skill-card fade-in">
+<div class="skill-card fade-in">
                     <div class="icon">
                         <i class="fab fa-java"></i>
                     </div>
                     <h3>Core Java</h3>
                     <p>Advanced Java programming with OOP concepts and enterprise development</p>
                 </div>
-                <div class="skill-card fade-in">
+<div class="skill-card fade-in">
                     <div class="icon">
-                        <i class="fas fa-robot"></i>
+                        <i class="fas fa-cogs"></i>
                     </div>
-                    <h3>Power Automate</h3>
-                    <p>Process automation and workflow optimization using Microsoft Power Platform</p>
+                   <h3>Spring Boot</h3>
+                    <p>Developing Restful APIs & Junit testing </p>
                 </div>
-                
-                <div class="skill-card fade-in">
-                    <div class="icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Power BI</h3>
-                    <p>Business intelligence and data visualization for informed decision making</p>
-                </div>
-                <div class="skill-card fade-in">
+<div class="skill-card fade-in">
     <div class="icon">
         <i class="fas fa-network-wired"></i>
     </div>
     <h3>REST API</h3>
     <p>Designing, developing, and consuming RESTful web services for scalable applications</p>
 </div>
-
 <div class="skill-card fade-in">
-    <div class="icon">
-        <i class="fas fa-vial"></i>
-    </div>
-    <h3>Postman</h3>
-    <p>API testing, validation, and automation for ensuring reliable backend services</p>
-</div><div class="skill-card fade-in">
-    <div class="icon">
-        <i class="fas fa-database"></i>
-    </div>
-    <h3>MongoDB</h3>
-    <p>NoSQL database, CRUD operations, aggregation, and schema design</p>
-</div>
-
+                    <div class="icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python</h3>
+                    <p>Data analysis, automation and web development using Python</p>
+                </div>
 <div class="skill-card fade-in">
-    <div class="icon">
-        <i class="fab fa-git-alt"></i>
-    </div>
-    <h3>Git</h3>
-    <p>Version control and collaborative source code management using Git</p>
-</div>
-
+                    <div class="icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>C</h3>
+                    <p>System programming and performance-critical application development</p>
+                </div>
 <div class="skill-card fade-in">
-    <div class="icon">
-        <i class="fas fa-database"></i>
-    </div>
-    <h3>MS SQL Server</h3>
-    <p>Relational database management, querying, and performance optimization</p>
-</div>
-
+                    <div class="icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Data Structures</h3>
+                    <p>Algorithm optimization and efficient data structure implementation</p>
+                </div>
+            </div>
+            <h3 class="skill-group-title">Frontend</h3>
+            <div class="skills-grid">
+<div class="skill-card fade-in">
+                    <div class="icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>UI Development</h3>
+                    <p>Building responsive, user-friendly interfaces with HTML, CSS and JavaScript, including customer and admin dashboards</p>
+                </div>
+<div class="skill-card fade-in">
+                    <div class="icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3>HTML</h3>
+                    <p>Semantic, accessible markup for dashboards and web applications</p>
+                </div>
+<div class="skill-card fade-in">
+                    <div class="icon">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <h3>CSS</h3>
+                    <p>Responsive layouts and clean styling for user-friendly interfaces</p>
+                </div>
+<div class="skill-card fade-in">
+                    <div class="icon">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <h3>JavaScript</h3>
+                    <p>Dynamic, interactive front-end behaviour and API integration</p>
+                </div>
+            </div>
+            <h3 class="skill-group-title">Database</h3>
+            <div class="skills-grid">
 <div class="skill-card fade-in">
     <div class="icon">
         <i class="fas fa-database"></i>
@@ -1610,15 +1828,37 @@ Previously, I worked as a Developer at D2RAILABS, contributing to real-time appl
     <h3>MySQL</h3>
     <p>Database design, CRUD operations, and query optimization for web applications</p>
 </div>
-
 <div class="skill-card fade-in">
     <div class="icon">
-        <i class="fab fa-aws"></i>
+        <i class="fas fa-database"></i>
     </div>
-    <h3>AWS</h3>
-    <p>Cloud computing services deployment, management, and scalability on AWS</p>
+    <h3>MS SQL Server</h3>
+    <p>Relational database management, querying, and performance optimization</p>
 </div>
-
+<div class="skill-card fade-in">
+    <div class="icon">
+        <i class="fas fa-database"></i>
+    </div>
+    <h3>MongoDB</h3>
+    <p>NoSQL database, CRUD operations, aggregation, and schema design</p>
+</div>
+<div class="skill-card fade-in">
+                    <div class="icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>SQL</h3>
+                    <p>Database design, optimization and complex query development</p>
+                </div>
+            </div>
+            <h3 class="skill-group-title">DevOps &amp; Tools</h3>
+            <div class="skills-grid">
+<div class="skill-card fade-in">
+    <div class="icon">
+        <i class="fab fa-git-alt"></i>
+    </div>
+    <h3>Git</h3>
+    <p>Version control and collaborative source code management using Git</p>
+</div>
 <div class="skill-card fade-in">
     <div class="icon">
         <i class="fas fa-tools"></i>
@@ -1626,57 +1866,56 @@ Previously, I worked as a Developer at D2RAILABS, contributing to real-time appl
     <h3>Jenkins</h3>
     <p>CI/CD automation for building, testing, and deploying applications efficiently</p>
 </div>
-                
-                <div class="skill-card fade-in">
+<div class="skill-card fade-in">
+    <div class="icon">
+        <i class="fab fa-aws"></i>
+    </div>
+    <h3>AWS</h3>
+    <p>Cloud computing services deployment, management, and scalability on AWS</p>
+</div>
+<div class="skill-card fade-in">
+    <div class="icon">
+        <i class="fas fa-vial"></i>
+    </div>
+    <h3>Postman</h3>
+    <p>API testing, validation, and automation for ensuring reliable backend services</p>
+</div>
+            </div>
+            <h3 class="skill-group-title">Automation &amp; Analytics</h3>
+            <div class="skills-grid">
+<div class="skill-card fade-in">
                     <div class="icon">
-                        <i class="fas fa-code"></i>
+                        <i class="fas fa-robot"></i>
                     </div>
-                    <h3>C</h3>
-                    <p>System programming and performance-critical application development</p>
+                    <h3>Power Automate</h3>
+                    <p>Process automation and workflow optimization using Microsoft Power Platform</p>
                 </div>
-                
-                <div class="skill-card fade-in">
+<div class="skill-card fade-in">
                     <div class="icon">
-                        <i class="fas fa-database"></i>
+                        <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3>SQL</h3>
-                    <p>Database design, optimization and complex query development</p>
+                    <h3>Power BI</h3>
+                    <p>Business intelligence and data visualization for informed decision making</p>
                 </div>
-                
-                <div class="skill-card fade-in">
-                    <div class="icon">
-                        <i class="fab fa-python"></i>
-                    </div>
-                    <h3>Python</h3>
-                    <p>Data analysis, automation and web development using Python</p>
-                </div>
-                
-                <div class="skill-card fade-in">
-                    <div class="icon">
-                        <i class="fas fa-project-diagram"></i>
-                    </div>
-                    <h3>Data Structures</h3>
-                    <p>Algorithm optimization and efficient data structure implementation</p>
-                </div>
-                
-                <div class="skill-card fade-in">
+<div class="skill-card fade-in">
                     <div class="icon">
                         <i class="fas fa-file-excel"></i>
                     </div>
                     <h3>MS Office Suite</h3>
                     <p>Advanced Excel, PowerPoint and Word for business productivity</p>
                 </div>
-                
-                <div class="skill-card fade-in">
+            </div>
+            <h3 class="skill-group-title">AI</h3>
+            <div class="skills-grid">
+<div class="skill-card fade-in">
                     <div class="icon">
-                        <i class="fas fa-cogs"></i>
+                        <i class="fas fa-brain"></i>
                     </div>
-                   <h3>Spring Boot</h3>
-                    <p>Developing Restful APIs & Junit testing </p>
+                    <h3>AI Tools &amp; Models</h3>
+                    <p>Hands-on use of leading AI models across all my projects for coding, debugging, testing and faster delivery</p>
                 </div>
             </div>
-        </div>
-    </section>
+</section>
 
     <!-- Experience Section -->
     <section id="experience" class="experience section">
@@ -1699,6 +1938,8 @@ Previously, I worked as a Developer at D2RAILABS, contributing to real-time appl
                                 <img src="experience-thomson-digital.png" alt="Team Lead managing digital publishing and XML workflows" width="1200" height="675" loading="lazy">
                             </div>
                             <ul class="exp-points">
+                                <li><strong>Recognised with a salary increment within just 6 months of joining</strong> in recognition of performance, ownership, and delivery quality.</li>
+                                <li>Interviewing and selecting Java developers for the team, and building a group that can handle multiple projects and workstreams in parallel.</li>
                                 <li>Working as a Team Lead for the Chennai branch, managing team operations, workflow coordination, task allocation, and delivery activities.</li>
                                 <li>Managing and contributing to multiple digital publishing and content-conversion workflows, including XML-to-XML, PDF-to-XML, EPUB-to-XML, and BITS-to-ANI360 transformations.</li>
                                 <li>Overseeing end-to-end XML conversion and validation processes, ensuring content accuracy, quality standards, and timely delivery.</li>
@@ -1711,7 +1952,7 @@ Previously, I worked as a Developer at D2RAILABS, contributing to real-time appl
                         <article class="journey-card fade-in">
                             <h3>Technical Trainer &amp; Knowledge Transfer Specialist</h3>
                             <div class="company">Freelance</div>
-                            <div class="date">Dec 2026 - Apr 2026</div>
+                            <div class="date">Dec 2025 - Apr 2026</div>
                             <div class="project-visual">
                                 <img src="experience-technical-trainer.png" alt="Technical trainer delivering classroom session" width="1200" height="675" loading="lazy">
                             </div>
@@ -1782,11 +2023,94 @@ Previously, I worked as a Developer at D2RAILABS, contributing to real-time appl
                 <div class="journey-group">
                     <h3 class="journey-group-title">Projects</h3>
                     <div class="journey-cards">
+                        <article class="journey-card fade-in thomson-project">
+                            <h3>Elsevier Books – End-to-End Production Management Platform <span class="live-badge"><i class="fas fa-circle"></i> Live</span></h3>
+                            <div class="company">Thomson Digital | Java, Spring Boot, REST APIs, HTML, CSS, JavaScript, XML, MySQL</div>
+                            <div class="project-visual">
+                        <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Library of books representing the Elsevier book production platform" width="1200" height="675" loading="lazy">
+                    </div>
+                            <div class="metric-chips"><span>2-day turnaround</span><span>4 dashboards</span><span>Live</span></div>
+                            <ul class="exp-points">
+                        <li>Developed frontend and backend components for an Elsevier book production platform with integrated dashboards for book allocation, quality control, assistant editor (AS/CE) workflows, and graphics processing.</li>
+                        <li>Streamlined book production, tracked workflow progress, and managed graphics-processing bottlenecks to support delivery within a 2-day turnaround time.</li>
+                        <li><strong>Customer Dashboard:</strong> manage allocated books and monitor production status.</li>
+                        <li><strong>QC Dashboard:</strong> track quality checks and support output validation.</li>
+                        <li><strong>AS/CE Dashboard:</strong> manage editorial workflows and book-processing progress.</li>
+                        <li><strong>Graphics Dashboard:</strong> monitor graphics processing, identify bottlenecks, and track resolution status.</li>
+                        <li>Developed and integrated dashboard functionality and backend workflows across frontend and backend.</li>
+                        <li>Improved visibility across production stages to support timely book delivery.</li>
+                    </ul>
+                        </article>
+                        <article class="journey-card fade-in thomson-project">
+                            <h3>60-Minute Delivery Automation Platform – Elsevier <span class="live-badge"><i class="fas fa-circle"></i> Live</span></h3>
+                            <div class="company">Thomson Digital | Full-Stack Development, File Processing, Workflow Automation</div>
+                            <div class="project-visual">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Dashboard representing the 60-minute delivery automation platform" width="1200" height="675" loading="lazy">
+                    </div>
+                            <div class="metric-chips"><span>60-minute delivery</span><span>End-to-end automation</span><span>Live</span></div>
+                            <ul class="exp-points">
+                        <li>Developed a full-stack application for a 60-minute delivery workflow, handling end-to-end file processing.</li>
+                        <li>Covered graphics and image correction, document conversion, and related production activities.</li>
+                        <li>Worked on both frontend and backend development to streamline the workflow and improve processing efficiency.</li>
+                    </ul>
+                        </article>
+                        <article class="journey-card fade-in thomson-project">
+                            <h3>Unitouch 2.0 – Customer and Admin Dashboard <span class="live-badge"><i class="fas fa-circle"></i> Live</span></h3>
+                            <div class="company">Thomson Digital | Full-Stack Development, FTP Integration, Workflow Automation</div>
+                            <div class="project-visual">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Analytics dashboard representing Unitouch 2.0" width="1200" height="675" loading="lazy">
+                    </div>
+                            <div class="metric-chips"><span>FTP auto-allocation</span><span>Zero manual allocation</span><span>Customer + Admin dashboards</span></div>
+                            <ul class="exp-points">
+                        <li>Developed the customer and admin dashboards for Unitouch 2.0.</li>
+                        <li>Implemented an automated file-processing workflow: files are retrieved directly from the FTP server and allocated for processing without manual intervention.</li>
+                        <li>Worked on both frontend and backend development to improve automation and operational efficiency.</li>
+                    </ul>
+                        </article>
+                        <article class="journey-card fade-in thomson-project">
+                            <h3>UniPM – Integrated Production Management Platform <span class="live-badge"><i class="fas fa-circle"></i> Live</span></h3>
+                            <div class="company">Thomson Digital | Tool Integration, UI Design, Production Management</div>
+                            <div class="project-visual">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Team working together representing the UniPM platform" width="1200" height="675" loading="lazy">
+                    </div>
+                            <div class="metric-chips"><span>Multi-tool integration</span><span>Single access point</span><span>Live</span></div>
+                            <ul class="exp-points">
+                        <li>Enhanced the existing UniPM platform by integrating multiple tools required for Elsevier client workflows into a unified system.</li>
+                        <li>Designed and developed the user interface to provide centralized access to the integrated tools.</li>
+                        <li>Simplified production operations through a single point of access.</li>
+                    </ul>
+                        </article>
+                        <article class="journey-card fade-in thomson-project">
+                            <h3>Live File Conversion and Processing System <span class="live-badge"><i class="fas fa-circle"></i> Live</span></h3>
+                            <div class="company">Thomson Digital | File Conversion, Production Workflow</div>
+                            <div class="project-visual">
+                        <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Data processing representing live file conversion" width="1200" height="675" loading="lazy">
+                    </div>
+                            <div class="metric-chips"><span>Live production</span><span>Automated file flow</span></div>
+                            <ul class="exp-points">
+                        <li>Worked on the file conversion workflow to support live production processing.</li>
+                        <li>Integrated and improved the conversion process to handle incoming files.</li>
+                        <li>Ensured files move through the production workflow efficiently.</li>
+                    </ul>
+                        </article>
+                        <article class="journey-card fade-in thomson-project">
+                            <h3>UniSec – Centralized Conversion Platform <span class="live-badge"><i class="fas fa-circle"></i> Live</span></h3>
+                            <div class="company">Thomson Digital | Elsevier | File Conversion, Team Collaboration</div>
+                            <div class="project-visual">
+                        <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Analytics workspace representing the UniSec conversion platform" width="1200" height="675" loading="lazy">
+                    </div>
+                            <div class="metric-chips"><span>Multi-user access</span><span>Team-wide conversions</span><span>Live</span></div>
+                            <ul class="exp-points">
+                        <li>Worked on UniSec, a conversion platform for the Elsevier client.</li>
+                        <li>Designed to let multiple team members access and perform file conversions.</li>
+                        <li>Simplified conversion operations and made the workflow accessible to the wider team.</li>
+                    </ul>
+                        </article>
                         <article class="journey-card fade-in">
                             <h3>Production E-Commerce Backend (Turtle)</h3>
                             <div class="company">D2RaiLabs, Chennai | Java, Spring Boot, AWS</div>
                             <div class="project-visual">
-                                <img src="ecommerce-turtle-project.png" alt="E-commerce Turtle project — modern web development showcase" width="1200" height="675" loading="lazy">
+                                <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Online payment representing the e-commerce Turtle backend" width="1200" height="675" loading="lazy">
                             </div>
                             <ul class="exp-points">
                                 <li>Built and deployed scalable backend infrastructure serving 10000+ users and 10,000+ daily API requests.</li>
@@ -1799,7 +2123,7 @@ Previously, I worked as a Developer at D2RAILABS, contributing to real-time appl
                             <h3>Online Feedback Form</h3>
                             <div class="company">HTML, CSS, PHP</div>
                             <div class="project-visual">
-                                <img src="online-feedback-form.png" alt="Why feedback matters — infographic for the online feedback form project" width="1200" height="675" loading="lazy">
+                                <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Hand filling out a form representing the online feedback form" width="1200" height="675" loading="lazy">
                             </div>
                             <ul class="exp-points">
                                 <li>Built a full-stack feedback platform with dynamic form generation and secure login flow.</li>
@@ -1811,7 +2135,7 @@ Previously, I worked as a Developer at D2RAILABS, contributing to real-time appl
                             <h3>Mobility Aware &amp; Delay Sensitive Service Provisioning in Mobile Edge Cloud Networks</h3>
                             <div class="company">Java, NetBeans</div>
                             <div class="project-visual">
-                                <img src="mobility-aware-project.png" alt="Mobility-aware mobile edge cloud network architecture — edge servers, IoT devices, and cloud collaboration" width="1200" height="675" loading="lazy">
+                                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Connected global network representing mobile edge cloud networks" width="1200" height="675" loading="lazy">
                             </div>
                             <ul class="exp-points">
                                 <li>Developed GUI-based simulation modules for mobility-aware and delay-sensitive provisioning.</li>
@@ -1823,7 +2147,7 @@ Previously, I worked as a Developer at D2RAILABS, contributing to real-time appl
                             <h3>XML-to-XML Content Conversion</h3>
                             <div class="company">Thomson Digital | XML Processing, XSLT, Validation</div>
                             <div class="project-visual">
-                                <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Code editor representing XML content conversion" width="1200" height="675" loading="lazy">
+                                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Code editor representing XML content conversion" width="1200" height="675" loading="lazy">
                             </div>
                             <ul class="exp-points">
                                 <li>Built automated XML-to-XML workflows with validation and batch processing.</li>
@@ -1834,7 +2158,7 @@ Previously, I worked as a Developer at D2RAILABS, contributing to real-time appl
                             <h3>BITS-to-XML Conversion System</h3>
                             <div class="company">Thomson Digital | BITS Standards, XML Schema, Content Mapping</div>
                             <div class="project-visual">
-                                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Server infrastructure representing BITS-to-XML processing" width="1200" height="675" loading="lazy">
+                                <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Network infrastructure representing BITS-to-XML processing" width="1200" height="675" loading="lazy">
                             </div>
                             <ul class="exp-points">
                                 <li>Mapped complex BITS metadata into standard XML with 98%+ accuracy.</li>
@@ -1845,7 +2169,7 @@ Previously, I worked as a Developer at D2RAILABS, contributing to real-time appl
                             <h3>PDF-to-XML Content Extraction</h3>
                             <div class="company">Thomson Digital | PDF Parsing, OCR Integration, Content Extraction</div>
                             <div class="project-visual">
-                                <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Document workspace representing PDF-to-XML extraction" width="1200" height="675" loading="lazy">
+                                <img src="https://images.unsplash.com/photo-1618044733300-9472054094ee?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Printed documents representing PDF-to-XML extraction" width="1200" height="675" loading="lazy">
                             </div>
                             <ul class="exp-points">
                                 <li>Extracted structured content from books, journals, and technical PDFs.</li>
@@ -1856,7 +2180,7 @@ Previously, I worked as a Developer at D2RAILABS, contributing to real-time appl
                             <h3>EPUB-to-XML Digital Book Conversion</h3>
                             <div class="company">Thomson Digital | EPUB Parsing, Book Standards, XML Markup</div>
                             <div class="project-visual">
-                                <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Books representing EPUB-to-XML conversion" width="1200" height="675" loading="lazy">
+                                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Stack of books representing EPUB-to-XML conversion" width="1200" height="675" loading="lazy">
                             </div>
                             <ul class="exp-points">
                                 <li>Preserved chapters, styles, images, metadata, and cross-references during conversion.</li>
@@ -1867,7 +2191,7 @@ Previously, I worked as a Developer at D2RAILABS, contributing to real-time appl
                             <h3>UNIPM - Universal Project Management Application</h3>
                             <div class="company">Thomson Digital | Project Management, Workflow Automation, Content Operations</div>
                             <div class="project-visual">
-                                <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Project team planning workflow for the UNIPM application" width="1200" height="675" loading="lazy">
+                                <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Workflow planning board representing the UNIPM application" width="1200" height="675" loading="lazy">
                             </div>
                             <ul class="exp-points">
                                 <li>Developed and maintained a project-management application for publishing project planning, tracking, and delivery.</li>
